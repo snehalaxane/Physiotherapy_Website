@@ -1,7 +1,7 @@
 import React from 'react';
 import { Target, Heart, Award, CheckCircle2 } from 'lucide-react';
 import TeamSection from '../components/TeamSection';
-import FaqSection from '../components/FAQSection.JSX';
+
 
 const AboutUs = () => {
   const values = [
