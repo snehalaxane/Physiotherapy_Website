@@ -1,56 +1,49 @@
-// import React from 'react';
-// import { ArrowRight, Activity } from 'lucide-react';
-// // Assuming you have a separate file for your service data
-// import { Services } from '../pages/Services'; 
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { allServices } from '../pages/ServiceData'; // Import your full data
+import { ArrowRight } from 'lucide-react';
 
-// const FeaturedServices = () => {
-//   // We only take the first 4 services for the home page
-//   const featured = Services.slice(0, 4);
+const FeaturedServices = () => {
+  // Show only the first 3 services on the home page
+  const limitedServices = allServices.slice(0, 3);
 
-//   return (
-//     <section className="py-20 bg-white">
-//       <div className="max-w-7xl mx-auto px-6">
-//         <div className="flex justify-between items-end mb-12">
-//           <div>
-//             <h2 className="text-3xl font-bold text-slate-900 mb-2">Our Specialized Care</h2>
-//             <p className="text-slate-500">Expert physiotherapy services tailored to your recovery.</p>
-//           </div>
+  return (
+    <section className="py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-8">
+      {/* HEADER SECTION: Heading centered, Link at the end */}
+        <div className="relative flex items-center justify-center mb-16">
+          {/* Centered Heading */}
+          <h2 className="text-4xl md:text-5xl font-bold text-[#095884] text-center">
+            Our <span className="text-[#A1C948]">Specialized</span> Services
+          </h2>
           
-//           {/* Desktop "See More" Link */}
-//           <a href="/services" className="hidden md:flex items-center gap-2 text-[#0D9488] font-bold hover:underline">
-//             View All Services <ArrowRight size={18} />
-//           </a>
-//         </div>
+          {/* Link positioned at the absolute right */}
+          <div className="absolute right-0 bottom-2 md:bottom-auto">
+            <Link 
+              to="/offerings/services" 
+              className="flex items-center gap-2 text-[#A1C948] font-bold hover:text-[#095884] transition-all group text-sm md:text-base"
+            >
+              See All Services 
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
 
-//         {/* Grid showing only 4 items */}
-//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-//           {featured.map((service, index) => (
-//             <div key={index} className="group p-8 rounded-3xl bg-[#F0F9F8] hover:bg-[#0D9488] transition-all duration-300 border border-teal-100/50">
-//               <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-6 text-[#0D9488] group-hover:scale-110 transition-transform">
-//                 <Activity size={24} />
-//               </div>
-//               <h3 className="text-xl font-bold mb-3 text-slate-800 group-hover:text-white transition-colors">
-//                 {service.title}
-//               </h3>
-//               <p className="text-slate-600 group-hover:text-teal-50 text-sm leading-relaxed mb-6">
-//                 {service.description}
-//               </p>
-//               <button className="text-[#0D9488] group-hover:text-white font-semibold flex items-center gap-2 text-sm">
-//                 Learn More <ArrowRight size={16} />
-//               </button>
-//             </div>
-//           ))}
-//         </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {limitedServices.map((service) => (
+           <div key={service.id} className="p-6 border rounded-3xl">
+    {/* This line fetches the image from your ServiceData.js */}
+    <img src={service.image} alt={service.title} className="w-full h-48 object-cover rounded-2xl mb-4" />
+    
+    <h3 className="text-xl font-bold">{service.title}</h3>
+    <p className="line-clamp-2">{service.desc}</p>
+    <Link to={`/offerings/services/${service.id}`} className="text-[#A1C948] font-bold mt-4 inline-block">Learn More</Link>
+  </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-//         {/* Mobile "See More" Button */}
-//         <div className="mt-10 md:hidden text-center">
-//           <a href="/services" className="inline-block bg-[#0D9488] text-white px-8 py-4 rounded-full font-bold shadow-lg">
-//             See More Services
-//           </a>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default FeaturedServices;
+export default FeaturedServices;

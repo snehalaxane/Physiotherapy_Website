@@ -22,7 +22,7 @@ const AppointmentForm = () => {
   };
 
   return (
-    <div className="min-h-screen  bg-gradient-to-br from-indigo-200 via-slate-500 to-black flex items-center justify-center">
+    <div className="bg-gradient-to-br from-indigo-200 via-slate-500 to-black flex items-center justify-center py-24">
       {/* Main Card Container */}
       <div className="w-full max-w-5xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
         

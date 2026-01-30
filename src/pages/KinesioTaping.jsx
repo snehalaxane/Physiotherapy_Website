@@ -50,7 +50,7 @@ const KinesioTapingSpecificContent = () => {
           
           {/* Section: Primary Goals */}
           <section id="goals" className="scroll-mt-32">
-            <h2 className="text-3xl font-serif text-[#095884] mb-10">Primary Goals of Taping</h2>
+            <h2 className="text-3xl font-poppins text-[#095884] mb-10">Primary Goals of Taping</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 { icon: <Droplets className="text-blue-400" />, title: "Reduce Swelling", desc: " By gently lifting the skin, the tape creates space in the subcutaneous layer, which can improve lymphatic drainage and blood flow. This is especially useful in the early post-immobilization phases when swelling is common." },
@@ -73,14 +73,14 @@ const KinesioTapingSpecificContent = () => {
 
           {/* Section: Techniques */}
           <section id="techniques" className="scroll-mt-32">
-            <h2 className="text-3xl font-serif text-[#095884] mb-4">Common Taping Techniques</h2>
+            <h2 className="text-3xl font-poppins text-[#095884] mb-4">Common Taping Techniques</h2>
             <p className="text-gray-500 mb-10">A physical therapist selects the most appropriate technique based on the healing stage.</p>
             
             <div className="space-y-8">
               {/* Technique 1 Card */}
               <div className="bg-[#095884] text-white p-8 rounded-[2.5rem] shadow-xl">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#A1C948]">Technique 01</span>
-                <h3 className="text-2xl font-serif mt-2 mb-6">Swelling & Edema Reduction (Lymphatic)</h3>
+                <h3 className="text-2xl font-poppins mt-2 mb-6">Swelling & Edema Reduction (Lymphatic)</h3>
                 <div className="grid md:grid-cols-2 gap-8 text-blue-100 text-sm leading-relaxed">
                   <div className="space-y-4">
                     <p><strong className="text-white">Tape Cut : </strong> A "Fan Cut" or "Web Cut." A single piece of tape is cut into 4-6 thin "tails," leaving a solid base of about 2 inches.
@@ -98,7 +98,7 @@ The tails are then laid down without stretch over the swollen area, fanning out 
               {/* Technique 2 Card */}
               <div className="bg-[#095884] text-white p-8 rounded-[2.5rem] shadow-xl">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#A1C948]">Technique 02</span>
-                <h3 className="text-2xl font-serif mt-2 mb-6">Tendon Support and Offloading</h3>
+                <h3 className="text-2xl font-poppins mt-2 mb-6">Tendon Support and Offloading</h3>
                 <div className="grid md:grid-cols-2 gap-8 text-blue-100 text-sm leading-relaxed">
                   <div className="space-y-4">
                     <p><strong className="text-white">Tape Cut : </strong> An "I" strip or a "Y" strip.
@@ -119,7 +119,7 @@ Lay the ends of the tails down on the calf muscle without stretch.</p>
                {/* Technique 3 Card */}
               <div className="bg-[#095884] text-white p-8 rounded-[2.5rem] shadow-xl">
                 <span className="text-xs font-bold uppercase tracking-widest text-[#A1C948]">Technique 03</span>
-                <h3 className="text-2xl font-serif mt-2 mb-6">Proprioceptive Support for Ankle Stability</h3>
+                <h3 className="text-2xl font-poppins mt-2 mb-6">Proprioceptive Support for Ankle Stability</h3>
                 <div className="grid md:grid-cols-2 gap-8 text-blue-100 text-sm leading-relaxed">
                   <div className="space-y-4">
                     <p><strong className="text-white">Tape Cut : </strong>Two "I" strips.
@@ -141,7 +141,7 @@ These strips are typically applied with light to moderate stretch over the joint
 
           {/* Section: Timeline */}
           <section id="timeline" className="scroll-mt-32 bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm">
-            <h2 className="text-3xl font-serif text-[#095884] mb-8">Rehabilitation Timeline</h2>
+            <h2 className="text-3xl font-poppins text-[#095884] mb-8">Rehabilitation Timeline</h2>
             <div className="space-y-6">
               {[
                 { stage: "0-6 Weeks", label: "Acute Phase", text: "Typically no taping; immobilization in cast/boot." },
@@ -165,7 +165,7 @@ These strips are typically applied with light to moderate stretch over the joint
           <section id="contra" className="scroll-mt-32 bg-red-50 p-10 rounded-[2.5rem] border border-red-100">
             <div className="flex items-center gap-3 mb-6">
               <AlertTriangle className="text-red-600" size={28} />
-              <h2 className="text-3xl font-serif text-red-900">Contraindications</h2>
+              <h2 className="text-3xl font-poppins text-red-900">Contraindications</h2>
             </div>
             <p className="text-red-800/70 mb-6 font-medium">Do NOT use Kinesio tape if you have any of the following:</p>
             <div className="grid md:grid-cols-2 gap-4">

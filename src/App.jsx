@@ -10,6 +10,8 @@ import TherapyDetail from "./pages/TherapyDetail";
 import Footer from "./components/Footer";
 import ServiceDetails from "./pages/ServiceDetails";
 import ContactPhysio from "./pages/ContactUs";
+import Symptoms from "./pages/Symptoms"
+import SymptomDeatils from "./pages/SymptomDetails";
 
 export default function App() {
   return (
@@ -22,8 +24,10 @@ export default function App() {
                 <Route path="/about" element={<AboutUs/>} />
                 <Route path="/offerings/treatments" element={<Treatment />} />
                   <Route path="/offerings/therapies" element={<Therapy />} />
+                      <Route path="/symptoms" element={<Symptoms />} />
                   <Route path="/offerings/treatments/:id" element={<TreatmentDetail />} />
                    <Route path="/offerings/therapies/:id" element={<TherapyDetail />} />
+                    <Route path="/symptoms/:id" element={<SymptomDeatils />} />
                   <Route path="/offerings/services" element={<Services />} />
                    <Route path="/offerings/services/:id" element={<ServiceDetails />} />
                   <Route path="/contact-us" element={<ContactPhysio />} />

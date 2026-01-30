@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, ArrowRight, MessageCircle, ChevronDown } from 'lucide-react';
+import emailjs from "@emailjs/browser";
+
+
+
 
 const ContactPhysioPage = () => {
   const [formData, setFormData] = useState({
@@ -12,8 +16,77 @@ const ContactPhysioPage = () => {
     message: ''
   });
 
+  const [otp, setOtp] = useState("");
+const [enteredOtp, setEnteredOtp] = useState("");
+const [otpSent, setOtpSent] = useState(false);
+const [emailVerified, setEmailVerified] = useState(false);
+
+  const sendOtp = async () => {
+  if (!formData.email) {
+    alert("Please enter email first");
+    return;
+  }
+
+  const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+  setOtp(generatedOtp);
+
+  try {
+    await emailjs.send(
+      "service_396iasn",
+      "template_h73cheb",
+      {
+        to_email: formData.email,
+        otp: generatedOtp,
+      },
+      "y2hSY0vYSA1ngrCLQ"
+    );
+
+    setOtpSent(true);
+    alert("OTP sent to your email");
+  } catch (error) {
+    console.error(error);
+    alert("Failed to send OTP");
+  }
+};
+
+const verifyOtp = () => {
+  if (enteredOtp === otp) {
+    setEmailVerified(true);
+    alert("Email verified successfully");
+  } else {
+    alert("Invalid OTP");
+  }
+};
+
+const sendHospitalEmail = async () => {
+  try {
+    await emailjs.send(
+      "service_396iasn",
+      "template_jpca4e8",
+      {
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        email: formData.email,
+        phone: formData.phone,
+        issue: formData.clinic,
+        concern: formData.concern,
+        message: formData.message,
+      },
+      "y2hSY0vYSA1ngrCLQ"
+    );
+
+    alert("Appointment request sent to hospital");
+  } catch (error) {
+    console.error(error);
+    alert("Failed to send appointment to hospital");
+  }
+};
+
+
+
+
   return (
-    <div className="min-h-screen bg-[#FDFDFD] font-sans text-slate-900">
+    <div className="min-h-screen bg-[#FDFDFD] font-poppins text-slate-900">
       
       {/* 1. Hero Section */}
       <section className="bg-[#A1C948] pt-20 pb-32 px-6 text-center text-white">
@@ -40,7 +113,7 @@ const ContactPhysioPage = () => {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest text-slate-400 font-bold mb-1">Call Us</p>
-                    <p className="text-lg font-semibold text-slate-700">+1 (555) 000-0000</p>
+                    <p className="text-lg font-semibold text-slate-700">+91 9700354747</p>
                   </div>
                 </div>
 
@@ -50,7 +123,7 @@ const ContactPhysioPage = () => {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest text-slate-400 font-bold mb-1">Email</p>
-                    <p className="text-lg font-semibold text-slate-700">care@physio.com</p>
+                    <p className="text-lg font-semibold text-slate-700">srisaipriyaphysiotherapy.com</p>
                   </div>
                 </div>
 
@@ -103,38 +176,93 @@ const ContactPhysioPage = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider ml-1">Email Address</label>
-                  <input type="email" className="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-teal-500 transition-all outline-none" placeholder="email@example.com" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider ml-1">Phone Number</label>
-                  <input type="tel" className="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-teal-500 transition-all outline-none" placeholder="+1 (000) 000-0000" />
-                </div>
+               <div className="space-y-2">
+  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider ml-1">
+    Email Address
+  </label>
+
+  <div className="flex gap-3">
+    <input
+      type="email"
+      className="flex-1 bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-teal-500 outline-none"
+      placeholder="email@example.com"
+      value={formData.email}
+      onChange={(e) =>
+        setFormData({ ...formData, email: e.target.value })
+      }
+      disabled={emailVerified}
+    />
+
+    {!emailVerified && (
+      <button
+        type="button"
+        onClick={sendOtp}
+        className="px-5 py-4 bg-teal-600 text-white rounded-2xl font-bold hover:bg-teal-500"
+      >
+        Verify
+      </button>
+    )}
+  </div>
+
+  {otpSent && !emailVerified && (
+    <div className="flex gap-3 mt-3">
+      <input
+        type="text"
+        placeholder="Enter OTP"
+        className="flex-1 bg-slate-50 rounded-2xl px-5 py-4 outline-none"
+        onChange={(e) => setEnteredOtp(e.target.value)}
+      />
+      <button
+        type="button"
+        onClick={verifyOtp}
+        className="px-5 py-4 bg-[#095884] text-white rounded-2xl font-bold"
+      >
+        Confirm
+      </button>
+    </div>
+  )}
+
+  {emailVerified && (
+    <p className="text-green-600 text-sm mt-2">✅ Email verified</p>
+  )}
+</div>
+
+               <div className="space-y-2">
+  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider ml-1">
+    Phone Number
+  </label>
+
+  <input
+    type="tel"
+    className="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-teal-500 transition-all outline-none"
+    placeholder="Enter 10-digit number"
+    value={formData.phone}
+    maxLength={10}
+    onChange={(e) => {
+      const value = e.target.value.replace(/\D/g, "");
+      if (value.length <= 10) {
+        setFormData({ ...formData, phone: value });
+      }
+    }}
+  />
+</div>
+
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-2">
-                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider ml-1">Preferred Clinic</label>
+                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider ml-1">Health Issue</label>
                   <div className="relative">
                     <select className="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-teal-500 appearance-none outline-none">
-                      <option>Downtown Recovery Center</option>
-                      <option>Northside Wellness</option>
+                      <option>Neck Pain</option>
+                      <option>Fracture</option>
                     </select>
                     <ChevronDown size={18} className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400" />
                   </div>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider ml-1">Area of Concern</label>
-                  <div className="relative">
-                    <select className="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-teal-500 appearance-none outline-none">
-                      <option>Lower Back Pain</option>
-                      <option>Sports Injury</option>
-                      <option>Post-Surgery Rehab</option>
-                      <option>Other</option>
-                    </select>
-                    <ChevronDown size={18} className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400" />
-                  </div>
+               <div className="space-y-2">
+                  <label className="text-[13px] font-bold text-slate-400 uppercase tracking-wider ml-1">AREA OF CONCERN</label>
+                  <input type="text" className="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-teal-500 transition-all outline-none" placeholder="Enter Concern" />
                 </div>
               </div>
 
@@ -143,10 +271,21 @@ const ContactPhysioPage = () => {
                 <textarea rows="4" className="w-full bg-slate-50 border-none rounded-2xl px-5 py-4 focus:ring-2 focus:ring-teal-500 outline-none transition-all resize-none" placeholder="How can we help you today?"></textarea>
               </div>
 
-              <button className="w-full bg-[#095884] hover:bg-[#A1C948] text-white py-5 rounded-2xl font-bold text-lg shadow-lg shadow-teal-700/20 flex items-center justify-center gap-3 group transition-all transform active:scale-[0.98]">
-                Schedule Consultation
-                <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+           <button
+  type="button"
+  disabled={!emailVerified}
+  onClick={sendHospitalEmail}
+  className={`w-full py-5 rounded-2xl font-bold text-lg
+    ${
+      emailVerified
+        ? "bg-[#095884] hover:bg-[#A1C948] text-white"
+        : "bg-slate-300 text-slate-500 cursor-not-allowed"
+    }`}
+>
+  Schedule Consultation
+</button>
+
+
             </form>
           </div>
         </div>

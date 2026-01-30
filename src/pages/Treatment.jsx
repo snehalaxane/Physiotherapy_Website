@@ -15,7 +15,7 @@ const TherapyPage = () => {
       {/* Search Header */}
       <section className="bg-blue-950 py-20 px-8">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-serif text-white mb-6">Our Treatment Modalities</h1>
+          <h1 className="text-4xl md:text-6xl font-poppins text-white mb-6">Our Treatment Modalities</h1>
           <div className="max-w-2xl mx-auto relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
             <input 
@@ -37,7 +37,7 @@ const TherapyPage = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-serif text-blue-950 mb-2 group-hover:text-teal-600 transition-colors">
+                <h3 className="text-xl font-poppins text-blue-950 mb-2 group-hover:text-teal-600 transition-colors">
                   {item.title}
                 </h3>
             <p className="text-gray-500 text-sm line-clamp-2 mb-6">
@@ -50,7 +50,7 @@ const TherapyPage = () => {
                     to={`/offerings/treatments/${item.id}`} // This now pulls from the 'id' in your data
                     className="flex items-center gap-1 text-blue-900 font-bold text-xs uppercase tracking-tighter hover:text-teal-600 transition-colors"
                   >
-                    View Procedure <ChevronRight size={14} />
+                    Read More <ChevronRight size={14} />
                   </Link>
                   {/* ... icons ... */}
                 </div>

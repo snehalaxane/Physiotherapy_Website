@@ -4,9 +4,9 @@ import { ArrowUpRight, Star, Plus, MessageCircle } from 'lucide-react';
 import TeamSection from '../components/TeamSection';
 import AppointmentForm from '../components/AppointmentForm';
 import RecoveryStories from '../components/RecoveryStories';
-// import FeaturedServices from '../components/FeaturedServices';
+import FeaturedServices from '../components/FeaturedServices';
 import Therapy from '../pages/Therapy';
-import FaqSection from '../components/FaqSection';
+import FaqSection from '../components/FaqSectionTemp';
 
 const PhysioHero = () => {
   // 2. Track which "slide" is active (0 or 1)
@@ -24,7 +24,7 @@ const PhysioHero = () => {
   return (
     <>
       {/* HERO SECTION - Background and padding limited to this section only */}
-      <section className="relative min-h-screen bg-[#F5F3F0] px-8 py-12 font-serif overflow-hidden">
+      <section className="relative py-24 bg-[#F5F3F0] font-poppins overflow-hidden">
         <div className="flex justify-between items-center max-w-7xl mx-auto mb-12">
           {/* <span className="text-sm font-sans font-bold text-blue-900">01 ——————</span>
           <span className="text-sm font-sans font-bold text-blue-900 uppercase tracking-widest">Physio</span> */}
@@ -39,7 +39,7 @@ const PhysioHero = () => {
               <div className="flex text-orange-400 mb-2">
                 {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
               </div>
-              <p className="text-gray-600 font-sans text-m leading-relaxed">
+              <p className="text-gray-600 font-poppins text-m leading-relaxed">
                 Where specialized care meets personalized recovery plans for every patient.
               </p>
             </div>
@@ -49,7 +49,7 @@ const PhysioHero = () => {
                   <span className="bg-blue-600 text-white p-2 rounded-full scale-50"><Plus /></span>
                   125+
                </div>
-               <p className="text-m text-gray-500 font-sans mt-2 italic font-normal">Where Healing Begins, Transformation Follows.</p>
+               <p className="text-m text-gray-500 font-poppins mt-2  font-poppins">Where Healing Begins, Transformation Follows.</p>
             </div>
           </div>
 
@@ -60,8 +60,8 @@ const PhysioHero = () => {
               <div className="absolute -left-14 bottom-20 bg-[#2B6191] text-white p-4 rounded-sm flex items-center gap-4 shadow-lg min-w-[240px] rotate-[2deg]">
                  <img src="https://i.pravatar.cc/100?img=5" className="w-12 h-12 rounded-full border-2 border-blue-400" alt="doc" />
                  <div>
-                    <p className="font-sans font-bold text-sm">Dr. XYZ</p>
-                    <p className="text-xs opacity-80 font-sans">Lead Specialist</p>
+                    <p className="font-poppins font-bold text-sm">Dr. XYZ</p>
+                    <p className="text-xs opacity-80 font-poppins">Lead Specialist</p>
                  </div>
                  <MessageCircle className="ml-auto opacity-80" size={18} />
               </div>
@@ -102,10 +102,12 @@ const PhysioHero = () => {
       </section>
 
       {/* OUTSIDE THE HERO SECTION - Now these can take 100% width */}
+      <FeaturedServices />
       <TeamSection />
-      <AppointmentForm />
+      {/* <AppointmentForm /> */}
+       <FaqSection />
       <RecoveryStories /> 
-      <FaqSection />
+     
     </>
   );
 };

@@ -1,29 +1,33 @@
 import React from 'react';
 import { Quote, Star } from 'lucide-react';
+import Patient1 from "../assets/Patient1.jpg"
+import Patient2 from "../assets/Patient2.jpg";
+import Patient3 from "../assets/Patient3.jpg"
 
 const RecoveryStories = () => {
   const stories = [
+   
     {
-      name: "Rajesh Kumar",
-      condition: "Post-ACL Surgery",
-      story: "After my knee surgery, I thought I'd never play football again. The personalized rehab plan at Sri Sai Priya was intense but exactly what I needed. I'm back on the field now!",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200",
-      rating: 5
-    },
-    {
-      name: "Saritha V.",
+      name: "Devi Balla",
       condition: "Chronic Back Pain",
-      story: "I had lived with lower back pain for 5 years. Within 8 weeks of targeted musculoskeletal therapy, I am finally pain-free and can pick up my grandkids without fear.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200",
+      story: "So good and he will understand the prblm clearly nd having more patience, friendly in nature nd gives mental awareness to the pt nd coming to treatment wise he gives 100% best. He won't charge much when we compare with others. 👍👏 …",
+      image: Patient2,
+      rating: 5
+    },
+     {
+      name: "MD. Naushad Ali",
+      condition: "Foot Fracture",
+      story: "Here, we visited for my friend treatment of foot fracture. He has in-depth knowledge and made us understand things in a very clear and crisp manner. The way he interacts with his patients is something that separates him from Others. I completely recommend this doctor. Thanks..",
+      image: Patient1,
       rating: 5
     },
     {
-      name: "Arjun Mehta",
-      condition: "Sports Injury (Shoulder)",
-      story: "The sports injury team is world-class. They didn't just treat the pain; they fixed my throwing mechanics. My shoulder feels stronger than it did before the injury.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200",
+      name: "Ramesh Dharani Gifts",
+      condition: "ACL",
+      story: "Best physiotherapy clinic in uppal area Dr Madhu sir is very experienced doctor i was gone for ACL tear post surgery with in the week I got reilif from back pain they are using advanced technology machines feel very comfortable i fully recommend...",
+     image: Patient3,
       rating: 5
-    }
+    },
   ];
 
   return (
@@ -33,10 +37,14 @@ const RecoveryStories = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-xl">
-            <h3 className="text-[#095884] font-sans font-bold uppercase tracking-widest text-xs mb-4">Patient Success</h3>
-            <h2 className="text-5xl text-[#A1C948] font-serif leading-tight">Stories of <br/> Remarkable Recovery</h2>
+            <h3 className="text-[#A1C948]  font-bold uppercase tracking-widest text-xs mb-4">Patient Success</h3>
+
+              <h2 className="text-4xl md:text-5xl font-bold text-[#A1C948]">
+             <span className="text-[#095884]">Our Stories of </span> Remarkable Recovery
+          </h2>
+            {/* <h2 className="text-5xl text-[#A1C948] leading-tight">Stories of <br/> Remarkable Recovery</h2> */}
           </div>
-          <p className="text-gray-600 font-sans max-w-sm">
+          <p className="text-gray-900 font-poppins max-w-sm">
             Nothing makes us happier than seeing our patients return to the activities they love. Here are a few of their journeys.
           </p>
         </div>
@@ -52,7 +60,7 @@ const RecoveryStories = () => {
                 {[...Array(item.rating)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
               </div>
 
-              <p className="text-blue-950 font-serif text-lg leading-relaxed mb-8 relative z-10 italic">
+              <p className="text-blue-950 font-poppins text-lg leading-relaxed mb-8 relative z-10">
                 "{item.story}"
               </p>
 
@@ -63,7 +71,7 @@ const RecoveryStories = () => {
                   className="w-14 h-14 rounded-full object-cover ring-2 ring-teal-50" 
                 />
                 <div>
-                  <h4 className="font-bold text-blue-950 font-sans">{item.name}</h4>
+                  <h4 className="font-bold text-blue-950 font-poppins">{item.name}</h4>
                   <span className="text-xs font-bold text-teal-600 uppercase tracking-tighter bg-teal-50 px-2 py-0.5 rounded">
                     {item.condition}
                   </span>
@@ -74,11 +82,11 @@ const RecoveryStories = () => {
         </div>
 
         {/* Call to Action for Stories */}
-        <div className="mt-16 text-center">
-          <button className="text-blue-900 font-bold border-b-2 border-blue-900 pb-1 hover:text-teal-600 hover:border-teal-600 transition-all font-sans uppercase text-sm tracking-widest">
+        {/* <div className="mt-16 text-center">
+          <button className="text-blue-900 font-bold border-b-2 border-blue-900 pb-1 hover:text-teal-600 hover:border-teal-600 transition-all font-poppins uppercase text-sm tracking-widest">
             Read More Success Stories
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

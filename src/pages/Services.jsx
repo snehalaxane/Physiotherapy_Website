@@ -19,10 +19,10 @@ const Services = () => {
                 </div>
               </div>
               <div className="p-8 flex-grow">
-                <h4 className="text-2xl text-[#095884] font-serif mb-4 group-hover:text-[#A1C948]">{service.title}</h4>
+                <h4 className="text-2xl text-[#095884] font-poppins mb-4 group-hover:text-[#A1C948]">{service.title}</h4>
                 <p className="text-gray-500 text-sm mb-8">{service.desc}</p>
                 <div className="flex items-center gap-2 text-blue-900 font-bold text-xs uppercase">
-                  Learn More <ArrowRight size={16} />
+                  Read More <ArrowRight size={16} />
                 </div>
               </div>
             </Link>

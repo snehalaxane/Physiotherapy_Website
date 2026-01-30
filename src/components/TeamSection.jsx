@@ -11,26 +11,26 @@ const TeamSection = () => {
    image: doctorImg2,
 },
     {
-   name: "",
-   role: "",
+   name: "Dr. N. Kishore Kumar ",
+   role: "Orthopedic Trauma & Joint Replacement Surgeon",
    image: doctorImg3,
 },
 
    {
-   name: "",
-   role: "",
+   name: "Dr.Priyanka.B",
+   role: "Female specialist",
    image: doctorImg1,
 }
   
   ];
 
   return (
-   <section className="relative min-h-screen bg-[#F5F3F0] px-8 py-12 font-serif overflow-hidden">
+   <section className="relative  bg-[#F5F3F0]  py-24 font-poppins overflow-hidden">
       <div className="max-w-7xl mx-auto px-8">
         
         {/* Header Section */}
         <div className="text-center mb-16 space-y-4">
-          <span className="inline-block px-4 py-1  text-[#A1C948] rounded-full text-xs font-bold uppercase tracking-widest font-sans">
+          <span className="inline-block px-4 py-2 text-[#A1C948] rounded-full text-xs font-bold uppercase tracking-widest font-poppins">
             Our Specialist Team
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-[#095884]">
@@ -39,7 +39,7 @@ const TeamSection = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {teamMembers.map((member, index) => (
             <div key={index} className="group flex flex-col items-center">
               {/* Image Container with Rounded Corners */}
@@ -53,10 +53,10 @@ const TeamSection = () => {
               
               {/* Text Content */}
               <div className="text-center">
-                <h3 className="text-lg font-bold text-blue-950 font-sans">
+                <h3 className="text-lg font-bold text-blue-950 font-poppins">
                   {member.name}
                 </h3>
-                <p className="text-sm text-gray-500 font-sans mt-1">
+                <p className="text-sm text-gray-800 font-poppins mt-1">
                   {member.role}
                 </p>
               </div>
