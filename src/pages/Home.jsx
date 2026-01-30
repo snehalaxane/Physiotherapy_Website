@@ -6,7 +6,7 @@ import AppointmentForm from '../components/AppointmentForm';
 import RecoveryStories from '../components/RecoveryStories';
 // import FeaturedServices from '../components/FeaturedServices';
 import Therapy from '../pages/Therapy';
-import FaqSection from '../components/FAQSection.JSX';
+import FaqSection from '../components/FaqSection';
 
 const PhysioHero = () => {
   // 2. Track which "slide" is active (0 or 1)
