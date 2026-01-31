@@ -72,3 +72,232 @@ button:focus-visible {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  animation: infinite-scroll 25s linear infinite;
+}
+
+/* Pause scroll on hover so patients can look at an image */
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
+}
+
+@keyframes revealText {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  animation: revealText 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Delay for sub-text */
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  opacity: 0; /* Starts invisible */
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Staggered delays */
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }
+
+
+@keyframes revealFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+    letter-spacing: 0.2em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    letter-spacing: normal;
+  }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.animate-reveal-right {
+  opacity: 0;
+  animation: revealFromRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-bounce-button {
+  opacity: 0;
+  animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  animation-delay: 0.8s; /* Waits for the text to almost finish */
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused; /* Stops the scroll when the user hovers to read */
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal {
+  opacity: 0; /* Start invisible */
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+@keyframes zoomFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-symptom-card {
+  opacity: 0;
+  animation: zoomFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px) perspective(1000px) rotateY(-15deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) perspective(1000px) rotateY(0deg);
+  }
+}
+
+.animate-therapy-card {
+  opacity: 0;
+  animation: slideInRight 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+@keyframes flipIn {
+  0% {
+    opacity: 0;
+    transform: rotateX(-30deg) translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: rotateX(0deg) translateY(0);
+  }
+}
+
+.animate-flip-card {
+  opacity: 0;
+  animation: flipIn 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-service-feature {
+  opacity: 0;
+  animation: slideInLeft 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+}
+/* Staggered Fade Up for Hero Text */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Photo Floating Effect */
+@keyframes floatPhoto {
+  0% { transform: rotate(-2deg) translateY(0px); }
+  50% { transform: rotate(-2deg) translateY(-15px); }
+  100% { transform: rotate(-2deg) translateY(0px); }
+}
+
+@keyframes revealLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes revealRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-reveal-left { animation: revealLeft 1s cubic-bezier(0.2, 1, 0.3, 1) forwards; }
+.animate-reveal-right { animation: revealRight 1s cubic-bezier(0.2, 1, 0.3, 1) forwards; }
+
+/* Reveal from Right for the Second Headline */
+@keyframes revealRight {
+  from { opacity: 0; transform: translateX(50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-up { animation: fadeUp 0.8s ease-out forwards; }
+.animate-reveal-right { animation: revealRight 1s ease-out forwards; }
+.animate-float-hero { animation: floatPhoto 5s ease-in-out infinite; }
+
+/* Delay classes */
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-600 { animation-delay: 0.6s; }

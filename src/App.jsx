@@ -12,6 +12,7 @@ import ServiceDetails from "./pages/ServiceDetails";
 import ContactPhysio from "./pages/ContactUs";
 import Symptoms from "./pages/Symptoms"
 import SymptomDeatils from "./pages/SymptomDetails";
+import FloatingActions from "./components/FloatingActions";
 
 export default function App() {
   return (
@@ -38,6 +39,7 @@ export default function App() {
       <RecoveryStories /> */}
      
       <Footer />
+      <FloatingActions />
     </>
   );
 }

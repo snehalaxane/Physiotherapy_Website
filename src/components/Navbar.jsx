@@ -30,7 +30,7 @@ function Navbar() {
         </NavLink>
 
         {/* Desktop Menu */}
-        <ul className="hidden xl:flex items-center gap-8 text-gray-700">
+        <ul className="hidden xl:flex items-center gap-14 text-gray-700">
           <li>
             <NavLink to="/" className={navLinkStyle}>
               {({ isActive }) => (
@@ -42,44 +42,20 @@ function Navbar() {
             </NavLink>
           </li>
 
-          <li>
-            <NavLink to="/about" className={navLinkStyle}>
+        
+
+          {/* Offerings Dropdown */}
+        
+
+           <li>
+            <NavLink to="/offerings/services" className={navLinkStyle}>
               {({ isActive }) => (
                 <>
-                  About Us
+                  Services
                   <span className={isActive ? activeUnderlineStyle : underlineStyle}></span>
                 </>
               )}
             </NavLink>
-          </li>
-
-          {/* Offerings Dropdown */}
-          <li 
-            className="relative group"
-            onMouseEnter={() => setDropdownOpen(true)}
-            onMouseLeave={() => setDropdownOpen(false)}
-          >
-            <button className="flex items-center gap-1 py-2 font-medium cursor-pointer group-hover:text-[#095884] transition-colors">
-              Our Offerings 
-              <ChevronDown size={16} className={`transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
-              <span className={dropdownOpen ? activeUnderlineStyle : underlineStyle}></span>
-            </button>
-
-            {/* Dropdown Menu */}
-            <ul className={`absolute left-0 mt-1 w-56 bg-white shadow-xl rounded-xl border border-gray-100 p-2 transition-all duration-300 
-              ${dropdownOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-4 invisible'}`}>
-              {['Treatments', 'Services', 'Therapies'].map((item) => (
-                <li key={item}>
-                  <NavLink
-                    to={`/offerings/${item.toLowerCase()}`}
-                    className="block px-4 py-2.5 text-sm hover:bg-[#F5F3F0] hover:text-[#095884] rounded-lg transition-colors"
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    {item} Offered
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
           </li>
 
           <li>
@@ -93,7 +69,7 @@ function Navbar() {
             </NavLink>
           </li>
 
-          <li>
+          {/* <li>
             <NavLink to="/blogs" className={navLinkStyle}>
               {({ isActive }) => (
                 <>
@@ -102,9 +78,9 @@ function Navbar() {
                 </>
               )}
             </NavLink>
-          </li>
+          </li> */}
 
-          <li>
+          {/* <li>
             <NavLink to="/patient-education" className={navLinkStyle}>
               {({ isActive }) => (
                 <>
@@ -113,13 +89,53 @@ function Navbar() {
                 </>
               )}
             </NavLink>
-          </li>
+          </li> */}
 
-          <li>
+          {/* <li>
             <NavLink to="/work-with-us" className={navLinkStyle}>
               {({ isActive }) => (
                 <>
                   Work With Us
+                  <span className={isActive ? activeUnderlineStyle : underlineStyle}></span>
+                </>
+              )}
+            </NavLink>
+          </li> */}
+
+
+            <li 
+            className="relative group"
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <button className="flex items-center gap-1 py-2 font-medium cursor-pointer group-hover:text-[#095884] transition-colors">
+              Our Offerings 
+              <ChevronDown size={16} className={`transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
+              <span className={dropdownOpen ? activeUnderlineStyle : underlineStyle}></span>
+            </button>
+
+            {/* Dropdown Menu */}
+            <ul className={`absolute left-0 mt-1 w-56 bg-white shadow-xl rounded-xl border border-gray-100 p-2 transition-all duration-300 
+              ${dropdownOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-4 invisible'}`}>
+              {['Treatments', 'Therapies'].map((item) => (
+                <li key={item}>
+                  <NavLink
+                    to={`/offerings/${item.toLowerCase()}`}
+                    className="block px-4 py-2.5 text-sm hover:bg-[#F5F3F0] hover:text-[#095884] rounded-lg transition-colors"
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    {item} Offered
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </li>
+
+            <li>
+            <NavLink to="/about" className={navLinkStyle}>
+              {({ isActive }) => (
+                <>
+                  About Us
                   <span className={isActive ? activeUnderlineStyle : underlineStyle}></span>
                 </>
               )}
@@ -149,19 +165,24 @@ function Navbar() {
       <div className={`xl:hidden absolute top-full left-0 w-full bg-white shadow-xl transition-all duration-300 overflow-hidden ${open ? 'max-h-screen border-t' : 'max-h-0'}`}>
         <ul className="px-8 py-6 flex flex-col gap-5 text-gray-700 font-medium">
           <li><NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink></li>
-          <li><NavLink to="/about" onClick={() => setOpen(false)}>About Us</NavLink></li>
+        
+             <li><NavLink to="/offerings/services" onClick={() => setOpen(false)}>Services</NavLink></li>
+             <li><NavLink to="/symptoms" onClick={() => setOpen(false)}>Symptoms</NavLink></li>
+       
           
           {/* Mobile Accordion for Offerings */}
           <li className="flex flex-col gap-3">
              <span className="text-gray-400 text-xs uppercase tracking-widest">Our Offerings</span>
              <NavLink to="/offerings/treatments" className="pl-4" onClick={() => setOpen(false)}>Treatments</NavLink>
-             <NavLink to="/offerings/services" className="pl-4" onClick={() => setOpen(false)}>Services</NavLink>
+             {/* <NavLink to="/offerings/services" className="pl-4" onClick={() => setOpen(false)}>Services</NavLink> */}
              <NavLink to="/offerings/therapies" className="pl-4" onClick={() => setOpen(false)}>Therapies</NavLink>
           </li>
+             <li><NavLink to="/about" onClick={() => setOpen(false)}>About Us</NavLink></li>
 
-          <li><NavLink to="/symptoms" onClick={() => setOpen(false)}>Symptoms</NavLink></li>
-          <li><NavLink to="/patient-education" onClick={() => setOpen(false)}>Patient Education</NavLink></li>
-          <li><NavLink to="/work-with-us" onClick={() => setOpen(false)}>Work With Us</NavLink></li>
+         
+        
+          {/* <li><NavLink to="/patient-education" onClick={() => setOpen(false)}>Patient Education</NavLink></li>
+          <li><NavLink to="/work-with-us" onClick={() => setOpen(false)}>Work With Us</NavLink></li> */}
           <li className="pt-4">
             <NavLink to="/contact-us" onClick={() => setOpen(false)} className="block text-center py-3 rounded-xl bg-[#095884] text-white">
               Book Now

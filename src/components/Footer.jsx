@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
+import { allServices } from '../pages/ServiceData';
 import { 
   Phone, Mail, MapPin, Facebook, Twitter, 
   Instagram, Youtube, Linkedin, ArrowRight ,Globe
@@ -23,7 +24,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col md:flex-row gap-4 items-start lg:items-center justify-end">
             <div className="w-full max-w-sm">
-              <p className="text-sm font-bold uppercase tracking-widest text-[#A1C948] mb-2">Newsletter</p>
+              <p className="text-sm font-bold uppercase py-3 px-6 tracking-widest text-[#A1C948] mb-1">Newsletter</p>
               <div className="relative">
                 <input 
                   type="email" 
@@ -66,19 +67,16 @@ const Footer = () => {
   <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-6">Services</h4>
   
   <ul className="grid grid-cols-3 gap-x-10 gap-y-3 text-gray-400 text-sm">
-    <li><Link to="/offerings/services" className="hover:text-[#A1C948] transition-colors">Post Surgery Rehab</Link></li>
-     <li><Link to="/offerings/services" className="hover:text-[#A1C948] transition-colors">Musculoskeletal</Link></li>
-      <li><Link to="/offerings/services" className="hover:text-[#A1C948] transition-colors">Vestibular Rehab</Link></li>
-       <li><Link to="/offerings/services" className="hover:text-[#A1C948] transition-colors">Paediatric Rehab</Link></li>
-        <li><Link to="/offerings/services" className="hover:text-[#A1C948] transition-colors">Women's health Rehab</Link></li>
-    <li><Link to="/offerings/services" className="hover:text-[#A1C948] transition-colors">Neuro Physiotherapy</Link></li>
-    <li><Link to="/offerings/services" className="hover:text-[#A1C948] transition-colors">Home Physiotherapy</Link></li>
-    <li><Link to="/offerings/services" className="hover:text-[#A1C948] transition-colors">Sports Physiotherapy</Link></li>
-    <li><Link to="/offerings/services" className="hover:text-[#A1C948] transition-colors">Geriatric Care</Link></li>
-   
-  
-    
-  </ul>
+  <li><Link to="/offerings/services/post-surgery-rehab" className="hover:text-[#A1C948] transition-colors">Post Surgery Rehab</Link></li>
+  <li><Link to="/offerings/services/musculoskeletal-physiotherapy" className="hover:text-[#A1C948] transition-colors">Musculoskeletal</Link></li>
+  <li><Link to="/offerings/services/vestibular-rehab" className="hover:text-[#A1C948] transition-colors">Vestibular Rehab</Link></li>
+  <li><Link to="/offerings/services/pediatric-physiotherapy" className="hover:text-[#A1C948] transition-colors">Paediatric Rehab</Link></li>
+  <li><Link to="/offerings/services/womens-health" className="hover:text-[#A1C948] transition-colors">Women's health Rehab</Link></li>
+  <li><Link to="/offerings/services/neuro-physiotherapy-rehab" className="hover:text-[#A1C948] transition-colors">Neuro Physiotherapy</Link></li>
+  <li><Link to="/offerings/services/physiotherapy-at-home" className="hover:text-[#A1C948] transition-colors">Home Physiotherapy</Link></li>
+  <li><Link to="/offerings/services/sports-physiotherapy" className="hover:text-[#A1C948] transition-colors">Sports Physiotherapy</Link></li>
+  <li><Link to="/offerings/services/geriatric-physiotherapy" className="hover:text-[#A1C948] transition-colors">Geriatric Care</Link></li>
+</ul>
 </div>
 
           {/* Col 3: Quick Links (Added this to fill space) */}

@@ -54,14 +54,23 @@ const FaqSection = () => {
   const rightColumn = faqs.slice(5, 10);
 
   const FaqItem = ({ faq, index, globalIndex }) => (
-    <div className="border border-white/20 rounded-xl overflow-hidden bg-white/5 transition-all mb-4">
-      <button
-        onClick={() => setActiveIndex(activeIndex === globalIndex ? null : globalIndex)}
-        className="w-full flex items-center justify-between p-5 text-left text-white hover:bg-white/10 transition-colors"
+  <div 
+      className="border border-white/20 rounded-xl overflow-hidden bg-white/5 transition-all mb-4"
+      // Change: Added onMouseEnter to open and onMouseLeave to close
+      onMouseEnter={() => setActiveIndex(globalIndex)}
+      onMouseLeave={() => setActiveIndex(null)}
+    >
+      <div // Change: Switched from <button> to <div> since hover triggers it now
+        className="w-full flex items-center justify-between p-5 text-left text-white cursor-pointer transition-colors"
       >
         <span className="text-lg font-medium pr-4">{faq.question}</span>
-        {activeIndex === globalIndex ? <ChevronDown size={20} className="shrink-0 text-[#A1C948]" /> : <ChevronRight size={20} className="shrink-0" />}
-      </button>
+        {activeIndex === globalIndex ? (
+          <ChevronDown size={20} className="shrink-0 text-[#A1C948]" />
+        ) : (
+          <ChevronRight size={20} className="shrink-0" />
+        )}
+      </div>
+      
       <div 
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
           activeIndex === globalIndex ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
@@ -75,7 +84,7 @@ const FaqSection = () => {
   );
 
   return (
-    <section className="bg-[#095884] py-24 px-6">
+    <section className="bg-[#095884] py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <span className="text-[#A1C948] uppercase tracking-widest font-bold text-sm">Got Questions?</span>
@@ -85,20 +94,20 @@ const FaqSection = () => {
         </div>
 
         {/* Two Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20">
-          {/* Left Side */}
-          <div className="flex flex-col">
-            {leftColumn.map((faq, i) => (
-              <FaqItem key={i} faq={faq} index={i} globalIndex={i} />
-            ))}
-          </div>
+       <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 min-h-[600px]">
+  {/* Left Side */}
+  <div className="flex flex-col h-full">
+    {leftColumn.map((faq, i) => (
+      <FaqItem key={i} faq={faq} index={i} globalIndex={i} />
+    ))}
+  </div>
 
           {/* Right Side */}
-          <div className="flex flex-col">
-            {rightColumn.map((faq, i) => (
-              <FaqItem key={i + 5} faq={faq} index={i} globalIndex={i + 5} />
-            ))}
-          </div>
+          <div className="flex flex-col h-full">
+    {rightColumn.map((faq, i) => (
+      <FaqItem key={i + 5} faq={faq} index={i} globalIndex={i + 5} />
+    ))}
+  </div>
         </div>
       </div>
     </section>

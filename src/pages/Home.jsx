@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // 1. Import useState
+import React, { useState } from 'react';
 import doctorimg from "../assets/doctorimg.png";
 import { ArrowUpRight, Star, Plus, MessageCircle } from 'lucide-react';
 import TeamSection from '../components/TeamSection';
@@ -9,105 +9,91 @@ import Therapy from '../pages/Therapy';
 import FaqSection from '../components/FaqSectionTemp';
 
 const PhysioHero = () => {
-  // 2. Track which "slide" is active (0 or 1)
-  const [activeSlide, setActiveSlide] = useState(0);
-
   const images = [
-    "https://plus.unsplash.com/premium_photo-1661779394380-e372d6a1f198?q=80&w=1170&auto=format&fit=crop",
+    "https://plus.unsplash.com/premium_photo-1661779394380-e372d6a1f198?q=80&w=400",
     "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=400",
-    "https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?auto=format&fit=crop&q=80&w=400"
+    "https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?auto=format&fit=crop&q=80&w=400",
+    "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=400",
   ];
-
-  // 3. Logic: If activeSlide is 0, show img 0 & 1. If 1, show img 1 & 2.
-  const visibleImages = activeSlide === 0 ? [images[0], images[1]] : [images[1], images[2]];
+  const scrollImages = [...images, ...images];
 
   return (
     <>
-      {/* HERO SECTION - Background and padding limited to this section only */}
-      <section className="relative py-24 bg-[#F5F3F0] font-poppins overflow-hidden">
-        <div className="flex justify-between items-center max-w-7xl mx-auto mb-12">
-          {/* <span className="text-sm font-sans font-bold text-blue-900">01 ——————</span>
-          <span className="text-sm font-sans font-bold text-blue-900 uppercase tracking-widest">Physio</span> */}
-        </div>
-
-        <div className="max-w-7xl mx-auto grid grid-cols-12 gap-4 items-center">
+      <section className="relative py-12 md:py-24 bg-[#F5F3F0] font-poppins overflow-hidden">
+         <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-12 gap-8 lg:gap-4 items-center">
           
           {/* LEFT COLUMN */}
-          <div className="col-span-12 lg:col-span-3 z-10 space-y-8">
-            <div>
-              <h2 className="text-5xl text-blue-950 mb-4 leading-tight">Welcome To <br/> Sri Sai Priya Physiotherapy</h2>
-              <div className="flex text-orange-400 mb-2">
-                {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-              </div>
-              <p className="text-gray-600 font-poppins text-m leading-relaxed">
-                Where specialized care meets personalized recovery plans for every patient.
-              </p>
+          <div className="col-span-12 lg:col-span-3 z-10 text-center lg:text-left">
+            <h2 className="text-3xl md:text-5xl font-bold text-[#095884] mb-8 leading-tight animate-fade-up">
+              Welcome To <br className="hidden md:block"/> Sri Sai Priya Physiotherapy
+            </h2>
+            
+            <div className="flex justify-center lg:justify-start text-orange-400 mb-4 animate-fade-up delay-200 opacity-0">
+              {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
             </div>
             
-            <div className="pt-8 text-blue-950 font-bold">
-               <div className="flex items-center gap-2 text-5xl">
-                  <span className="bg-blue-600 text-white p-2 rounded-full scale-50"><Plus /></span>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-md mx-auto lg:mx-0 animate-fade-up delay-400 opacity-0">
+              Where specialized care meets personalized recovery plans for every patient.
+            </p>
+            
+            <div className="pt-8 text-blue-950 font-bold animate-fade-up delay-600 opacity-0">
+               <div className="flex items-center justify-center lg:justify-start gap-2 text-4xl md:text-5xl">
+                  <span className="bg-[#A1C948] text-white p-2 rounded-full animate-bounce"><Plus /></span>
                   125+
                </div>
-               <p className="text-m text-gray-500 font-poppins mt-2  font-poppins">Where Healing Begins, Transformation Follows.</p>
+               <p className="text-sm md:text-base text-gray-500 mt-2">Where Healing Begins,<br/> Transformation Follows.</p>
             </div>
           </div>
 
-          {/* CENTER COLUMN */}
-          <div className="col-span-12 lg:col-span-5 relative flex justify-center">
-            <div className="relative p-4 bg-white shadow-2xl rotate-[-2deg] max-w-md">
+          {/* CENTER COLUMN - Floating Doctor Image */}
+          <div className="col-span-12 lg:col-span-5 relative flex justify-center py-10 md:py-0">
+            <div className="relative p-2 md:p-4 bg-white shadow-2xl animate-float-hero max-w-[280px] md:max-w-md">
               <img src={doctorimg} alt="Lead Doctor" className="w-full h-auto" />
-              <div className="absolute -left-14 bottom-20 bg-[#2B6191] text-white p-4 rounded-sm flex items-center gap-4 shadow-lg min-w-[240px] rotate-[2deg]">
-                 <img src="https://i.pravatar.cc/100?img=5" className="w-12 h-12 rounded-full border-2 border-blue-400" alt="doc" />
+              
+              <div className="absolute -left-6 md:-left-14 bottom-10 md:bottom-20 bg-[#2B6191] text-white p-3 md:p-4 rounded-sm flex items-center gap-4 shadow-lg min-w-[200px] rotate-[4deg] hover:rotate-0 transition-transform duration-500 cursor-pointer">
+                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
                  <div>
-                    <p className="font-poppins font-bold text-sm">Dr. XYZ</p>
-                    <p className="text-xs opacity-80 font-poppins">Lead Specialist</p>
+                    <p className="font-bold text-xs md:text-sm">Dr. Madhu</p>
+                    <p className="text-[10px] md:text-xs opacity-80">Lead Specialist</p>
                  </div>
                  <MessageCircle className="ml-auto opacity-80" size={18} />
               </div>
             </div>
           </div>
 
-          {/* RIGHT COLUMN */}
-          <div className="col-span-12 lg:col-span-4 z-10">
-            <h1 className="text-6xl text-blue-950 leading-[1.1] mb-8">
-              See Your Path <br/> To Recovery <br/> Begins.
-              <button className="inline-flex items-center justify-center w-12 h-12 bg-blue-800 text-white rounded-full ml-4 align-middle">
+          {/* RIGHT COLUMN - Slide in Header */}
+          <div className="col-span-12 lg:col-span-4 z-10 overflow-hidden text-center lg:text-left">
+            <h1 className="text-3xl md:text-5xl font-bold text-[#A1C948] leading-[1.1] mb-8 animate-reveal-right">
+              See Your Path <br className="hidden md:block"/> 
+              To Recovery <br className="hidden md:block"/> 
+              Begins.
+              
+              <button className="inline-flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-blue-800 text-white rounded-full ml-4 align-middle transition-transform hover:scale-110 active:scale-95 shadow-lg">
                 <ArrowUpRight size={20} />
               </button>
             </h1>
 
-            {/* IMAGE SLIDER AREA */}
-            <div className="flex gap-4 mt-12 transition-all duration-500 ease-in-out">
-              {visibleImages.map((src) => (
-                <div key={src} className="w-1/2 h-48 overflow-hidden rounded-sm shadow-md animate-in fade-in slide-in-from-right-4 duration-500">
-                  <img src={src} className="w-full h-full object-cover" alt="therapy" />
-                </div>
-              ))}
-            </div>
-
-            {/* PAGINATION DOTS */}
-            <div className="flex gap-2 mt-6 justify-center">
-              <button 
-                onClick={() => setActiveSlide(0)}
-                className={`h-2 rounded-full transition-all duration-300 ${activeSlide === 0 ? "w-6 bg-blue-800" : "w-2 bg-blue-300"}`}
-              />
-              <button 
-                onClick={() => setActiveSlide(1)}
-                className={`h-2 rounded-full transition-all duration-300 ${activeSlide === 1 ? "w-6 bg-blue-800" : "w-2 bg-blue-300"}`}
-              />
+            {/* AUTO-SCROLLING AREA */}
+            <div className="relative mt-8 md:mt-12 w-full overflow-hidden animate-fade-up delay-600 opacity-0">
+              <div className="flex gap-4 animate-infinite-scroll w-max hover:[animation-play-state:paused] cursor-pointer">
+                {scrollImages.map((src, index) => (
+                  <div 
+                    key={index} 
+                    className="w-36 h-36 md:w-48 md:h-48 flex-shrink-0 overflow-hidden rounded-xl shadow-md border-2 md:border-4 border-white transition-transform hover:scale-105"
+                  >
+                    <img src={src} className="w-full h-full object-cover" alt="therapy" />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* OUTSIDE THE HERO SECTION - Now these can take 100% width */}
       <FeaturedServices />
       <TeamSection />
-      {/* <AppointmentForm /> */}
-       <FaqSection />
+      <FaqSection />
       <RecoveryStories /> 
-     
     </>
   );
 };
