@@ -103,8 +103,8 @@ const ContactPhysioPage = () => {
               
               <div className="space-y-8">
                 {[
-                  { icon: <Phone size={20}/>, label: "Call Support", val: "+91 9700354747", bg: "bg-blue-50", color: "text-blue-600" },
-                  { icon: <Mail size={20}/>, label: "Email Us", val: "care@srisaipriya.com", bg: "bg-lime-50", color: "text-lime-600" },
+                  { icon: <Phone size={20}/>, label: "Call Support", val: "+91 9700354747 / 9963573822", bg: "bg-blue-50", color: "text-blue-600" },
+                  { icon: <Mail size={20}/>, label: "Email Us", val: "nunetimadhu@gmail.com", bg: "bg-lime-50", color: "text-lime-600" },
                   { icon: <Clock size={20}/>, label: "Clinic Hours", val: "Mon-Sat: 8AM - 7PM", bg: "bg-orange-50", color: "text-orange-600" }
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4 group">

@@ -85,8 +85,8 @@ const RecoveryStories = () => {
                   className="w-12 h-12 rounded-full object-cover ring-2 ring-teal-50" 
                 />
                 <div>
-                  <h4 className="font-bold text-blue-950 font-poppins text-sm">{item.name}</h4>
-                  <span className="text-[10px] font-bold text-teal-600 uppercase tracking-tighter bg-teal-50 px-2 py-0.5 rounded">
+                  <h4 className="font-bold text-[#095884] font-poppins text-sm">{item.name}</h4>
+                  <span className="text-[10px] font-bold text-[#A1C948] uppercase tracking-tighter bg-teal-50 px-2 py-0.5 rounded">
                     {item.condition}
                   </span>
                 </div>

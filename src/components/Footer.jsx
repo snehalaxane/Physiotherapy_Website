@@ -9,12 +9,12 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0A1128] text-white pt-20 pb-10 px-8">
+    <footer className="bg-[#0A1128] text-white pt-12 pb-6 px-8">
       {/* Increased width to 100% or very wide container */}
       <div className="max-w-[1400px] mx-auto"> 
         
         {/* Tier 1: Branding & Newsletter */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pb-16 border-b border-white/10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-10 border-b border-white/10">
           <div>
             <img src={logo} alt="Logo" className="h-16 md:h-20 w-auto mb-6" />
             <p className="text-gray-400 max-w-md leading-relaxed">
@@ -47,7 +47,7 @@ const Footer = () => {
             <h4 className="font-bold text-[#A1C948] uppercase tracking-wider text-sm mb-6">Contact Us</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
               <li className="flex gap-3"><MapPin size={18} className="text-[#A1C948]" /> Hyderabad, India</li>
-              <li className="flex gap-3"><Phone size={18} className="text-[#A1C948]" /> +91 9700354747</li>
+              <li className="flex gap-3"><Phone size={18} className="text-[#A1C948]" /> +91 9700354747 / 9963573822</li>
             <li className="flex gap-3 items-center">
   <Globe size={18} className="text-[#A1C948] shrink-0" /> 
   <a 
@@ -107,7 +107,7 @@ const Footer = () => {
 
         {/* Tier 3: Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 uppercase tracking-widest">
-          <p>© 2026 Sri Sai Priya. All Rights Reserved.</p>
+          <p>© 2026 Sri Sai Priya Physiotherapy . All Rights Reserved.</p>
           <div className="flex gap-8">
             <Link to="" className="hover:text-white">Privacy Policy</Link>
             <Link to="" className="hover:text-white">Terms of Service</Link>

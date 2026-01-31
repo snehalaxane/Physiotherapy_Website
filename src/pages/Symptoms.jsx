@@ -30,7 +30,7 @@ const Symptoms = () => {
         </p>
 
         {/* Animated Search Bar */}
-        <div className="max-w-xl mx-auto relative animate-reveal z-10" style={{ animationDelay: '0.4s' }}>
+        {/* <div className="max-w-xl mx-auto relative animate-reveal z-10" style={{ animationDelay: '0.4s' }}>
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
           <input
             type="text"
@@ -38,7 +38,7 @@ const Symptoms = () => {
             className="w-full py-4 pl-12 pr-4 rounded-full text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#A1C948] shadow-2xl transition-all"
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-        </div>
+        </div> */}
       </section>
 
       {/* Grid Section - Updated for 4 columns and wider max-width */}

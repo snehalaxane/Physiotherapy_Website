@@ -51,7 +51,7 @@ const PhysioHero = () => {
               <img src={doctorimg} alt="Lead Doctor" className="w-full h-auto" />
               
               <div className="absolute -left-6 md:-left-14 bottom-10 md:bottom-20 bg-[#2B6191] text-white p-3 md:p-4 rounded-sm flex items-center gap-4 shadow-lg min-w-[200px] rotate-[4deg] hover:rotate-0 transition-transform duration-500 cursor-pointer">
-                 <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                 <div className="w-2 h-2 rounded-full bg-[#A1C948] animate-pulse"></div>
                  <div>
                     <p className="font-bold text-xs md:text-sm">Dr. Madhu</p>
                     <p className="text-[10px] md:text-xs opacity-80">Lead Specialist</p>

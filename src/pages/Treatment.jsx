@@ -18,15 +18,15 @@ const TherapyPage = () => {
         <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px] -mr-48 -mt-48" />
         
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <span className="text-teal-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block animate-reveal">
+          <span className="text-[#A1C948] font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block animate-reveal">
             Advanced Rehabilitation
           </span>
           <h1 className="text-4xl md:text-6xl font-poppins font-bold text-white mb-8 animate-reveal">
-            Our Treatment <span className="text-teal-400">Modalities</span>
+            Our Treatment <span className="text-[#A1C948]">Modalities</span>
           </h1>
           
           {/* Animated Search Bar */}
-          <div className="max-w-2xl mx-auto relative animate-reveal" style={{ animationDelay: '0.2s' }}>
+          {/* <div className="max-w-2xl mx-auto relative animate-reveal" style={{ animationDelay: '0.2s' }}>
             <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
             <input 
               type="text"
@@ -34,7 +34,7 @@ const TherapyPage = () => {
               className="w-full py-5 pl-14 pr-6 rounded-2xl text-blue-900 shadow-2xl outline-none focus:ring-2 focus:ring-teal-400 transition-all bg-white"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-          </div>
+          </div> */}
         </div>
       </section>
       
@@ -61,7 +61,7 @@ const TherapyPage = () => {
               </div>
 
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-lg font-bold font-poppins text-blue-950 mb-3 group-hover:text-teal-600 transition-colors leading-tight">
+                <h3 className="text-lg font-bold font-poppins text-[#095884] mb-3 group-hover:text-[#A1C948] transition-colors leading-tight">
                   {item.title}
                 </h3>
                 
@@ -72,7 +72,7 @@ const TherapyPage = () => {
                 <div className="flex items-center justify-between pt-4 border-t border-gray-50">
                   <Link 
                     to="/contact-us"
-                    className="flex items-center gap-1 text-blue-900 font-bold text-[10px] uppercase tracking-wider hover:gap-2 transition-all hover:text-teal-600"
+                    className="flex items-center gap-1 text-blue-900 font-bold text-[10px] uppercase tracking-wider hover:gap-2 transition-all hover:text-[#A1C948]"
                   >
                     Book Now <ChevronRight size={14} />
                   </Link>
