@@ -1,11 +1,12 @@
 import { useState } from "react";
 import logo from "../assets/logo.png";
 import { NavLink } from "react-router-dom";
-import { ChevronDown, Menu, X ,Home, Sparkles ,Stethoscope, Activity, HeartPulse, Pill, Thermometer} from "lucide-react";
+import { ChevronDown, Menu, X ,Home, Sparkles ,Info,Stethoscope, LayoutGrid ,Activity, HeartPulse, Pill, Thermometer, Share2, Facebook, Instagram,} from "lucide-react";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [infoDropdownOpen, setInfoDropdownOpen] = useState(false);
 
   // Reusable Underline Logic
   const underlineStyle = `absolute bottom-0 left-0 w-full h-0.5 bg-[#A1C948] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100`;
@@ -166,7 +167,7 @@ function Navbar() {
             </ul>
           </li>
 
-          <li>
+          {/* <li>
             <NavLink to="/about" className={navLinkStyle}>
               {({ isActive }) => (
                 <>
@@ -175,7 +176,62 @@ function Navbar() {
                 </>
               )}
             </NavLink>
-          </li>
+          </li> */}
+
+       <li 
+  className="relative group"
+  onMouseEnter={() => setInfoDropdownOpen(true)}
+  onMouseLeave={() => setInfoDropdownOpen(false)}
+>
+  {/* The Trigger Button */}
+  <button className={`relative flex items-center gap-3 px-1 transition-all duration-300 font-medium pb-2 ${infoDropdownOpen ? "text-[#095884]" : "text-gray-600 hover:text-[#095884]"}`}>
+    <Share2 size={18} className={`transition-colors ${infoDropdownOpen ? 'text-[#A1C948]' : 'text-gray-400 group-hover:text-[#A1C948]'}`} />
+    <span>More Info</span>
+    <ChevronDown size={16} className={`transition-transform duration-500 ${infoDropdownOpen ? 'rotate-180' : ''}`} />
+    
+    {/* Consistent Gradient Underline */}
+    <GradientUnderline isActive={infoDropdownOpen} />
+  </button>
+
+  {/* THE DROPDOWN PANEL */}
+  <ul className={`absolute right-0 mt-2 w-64 bg-white shadow-2xl rounded-2xl border border-gray-100 p-2 transition-all duration-300 transform origin-top
+    ${infoDropdownOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 invisible'}`}>
+    
+    {/* 1. About Us Link */}
+    <li>
+      <NavLink 
+        to="/about" 
+        className="flex items-center gap-4 px-4 py-3 text-sm hover:bg-blue-50 rounded-xl transition-all group/item"
+        onClick={() => setInfoDropdownOpen(false)}
+      >
+        <div className="bg-blue-100 p-2 rounded-lg group-hover/item:bg-[#095884] transition-colors">
+            <Info size={16} className="text-[#095884] group-hover/item:text-white transition-colors" />
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-gray-800">About Us</span>
+          <span className="text-[10px] text-gray-400 uppercase tracking-tighter">Our Mission</span>
+        </div>
+      </NavLink>
+    </li>
+
+    {/* 2. Social Feeds Link (Redirects to internal project page) */}
+    <li>
+      <NavLink 
+        to="/social-feeds" 
+        className="flex items-center gap-4 px-4 py-3 text-sm hover:bg-lime-50 rounded-xl transition-all group/item mt-1"
+        onClick={() => setInfoDropdownOpen(false)}
+      >
+        <div className="bg-lime-100 p-2 rounded-lg group-hover/item:bg-[#A1C948] transition-colors">
+            <LayoutGrid size={16} className="text-[#A1C948] group-hover/item:text-white transition-colors" />
+        </div>
+        <div className="flex flex-col">
+          <span className="font-semibold text-gray-800">Social Feeds</span>
+          <span className="text-[10px] text-gray-400 uppercase tracking-tighter">Latest Updates</span>
+        </div>
+      </NavLink>
+    </li>
+  </ul>
+</li>
 
           <li className="ml-4">
             <NavLink 
@@ -216,6 +272,9 @@ function Navbar() {
              <NavLink to="/offerings/therapies" className="pl-4" onClick={() => setOpen(false)}>Therapies</NavLink>
           </li>
              <li><NavLink to="/about" onClick={() => setOpen(false)}>About Us</NavLink></li>
+
+
+           
 
          
         

@@ -7,6 +7,20 @@ import {
   Instagram, Youtube, Linkedin, ArrowRight ,Globe
 } from 'lucide-react';
 
+
+const socialLinks = [
+  { 
+    Icon: Facebook, 
+    url: "https://facebook.com/yourprofile", 
+    hoverColor: "hover:bg-[#1877F2] hover:text-white" // Facebook Blue
+  },
+  { 
+    Icon: Instagram, 
+    url: "https://instagram.com/yourprofile", 
+    hoverColor: "hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:text-white" // Insta Gradient
+  },
+];
+
 const Footer = () => {
   return (
     <footer className="bg-[#0A1128] text-white pt-12 pb-6 px-8">
@@ -109,20 +123,28 @@ const Footer = () => {
         {/* Tier 3: Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 uppercase tracking-widest">
           <p>© 2026 Sri Sai Priya Physiotherapy . All Rights Reserved.</p>
+
+           <div>
+            {/* <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-6">Follow Us</h4> */}
+           <div className="flex flex-wrap gap-3">
+  {socialLinks.map((social, i) => (
+    <a
+      key={i}
+      href={social.url}
+      target="_blank"             // Opens in a new tab
+      rel="noopener noreferrer"   // Security best practice
+      className={`bg-gray-50 p-3 rounded-xl transition-all duration-300 hover:-translate-y-1 shadow-sm flex items-center justify-center ${social.hoverColor}`}
+    >
+      <social.Icon size={18} />
+    </a>
+  ))}
+</div>
+          </div>
           <div className="flex gap-8">
             <Link to="" className="hover:text-white">Privacy Policy</Link>
             <Link to="" className="hover:text-white">Terms of Service</Link>
           </div>
-          <div>
-            {/* <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-6">Follow Us</h4> */}
-            <div className="flex flex-wrap gap-3">
-              {[Facebook, Instagram, Youtube, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="bg-gray-50 p-3 rounded-xl hover:bg-[#A1C948] transition-all hover:-translate-y-1">
-                  <Icon size={18} />
-                </a>
-              ))}
-            </div>
-          </div>
+         
         </div>
       </div>
     </footer>

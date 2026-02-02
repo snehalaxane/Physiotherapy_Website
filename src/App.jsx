@@ -13,6 +13,8 @@ import ContactPhysio from "./pages/ContactUs";
 import Symptoms from "./pages/Symptoms"
 import SymptomDeatils from "./pages/SymptomDetails";
 import FloatingActions from "./components/FloatingActions";
+import SocialFeeds from "./pages/SocialFeeds";
+
 
 export default function App() {
   return (
@@ -32,6 +34,7 @@ export default function App() {
                   <Route path="/offerings/services" element={<Services />} />
                    <Route path="/offerings/services/:id" element={<ServiceDetails />} />
                   <Route path="/contact-us" element={<ContactPhysio />} />
+                   <Route path="/social-feeds" element={<SocialFeeds />} />
         </Routes>
       </main>
       {/* <TeamSection />
