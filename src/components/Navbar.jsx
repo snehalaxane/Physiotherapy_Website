@@ -12,11 +12,20 @@ function Navbar() {
   const activeUnderlineStyle = `absolute bottom-0 left-0 w-full h-0.5 bg-[#095884] transform scale-x-100`;
 
   const navLinkStyle = ({ isActive }) =>
-   `group relative flex items-center px-4 py-2.5 transition-all duration-300 font-medium overflow-hidden rounded-xl ${
-      isActive 
-        ? "text-[#095884] bg-blue-50/80 shadow-sm" 
-        : "text-gray-600 hover:text-[#095884] hover:bg-gray-50"
-    }`;
+  `group relative flex items-center px-2 py-2 transition-all duration-300 font-medium ${
+    isActive ? "text-[#095884]" : "text-gray-600 hover:text-[#095884]"
+  }`;
+
+  const GradientUnderline = ({ isActive }) => (
+  <span 
+    className={`absolute bottom-0 left-0 h-[3px] w-full rounded-full transition-all duration-500 ease-out
+    bg-gradient-to-r from-[#095884] via-[#559166] to-[#A1C948]
+    ${isActive 
+      ? "opacity-100 scale-x-100" 
+      : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
+    }`}
+  />
+);
 
     const NavItem = ({ label, Icon, isActive }) => (
     <div className="flex items-center gap-3">
@@ -50,9 +59,14 @@ function Navbar() {
 
         {/* Desktop Menu */}
       <ul className="hidden xl:flex items-center gap-6 text-gray-700">
-          <li>
+         <li>
             <NavLink to="/" className={navLinkStyle}>
-              {({ isActive }) => <NavItem label="Home" Icon={Home} isActive={isActive} />}
+              {({ isActive }) => (
+                <>
+                  <NavItem label="Home" Icon={Home} isActive={isActive} />
+                  <GradientUnderline isActive={isActive} />
+                </>
+              )}
             </NavLink>
           </li>
 
@@ -61,17 +75,33 @@ function Navbar() {
           {/* Offerings Dropdown */}
         
 
-          <li>
-            <NavLink to="/offerings/services" className={navLinkStyle}>
-              {({ isActive }) => <NavItem label="Services" Icon={Stethoscope} isActive={isActive} />}
-            </NavLink>
-          </li>
+         <li>
+  <NavLink to="/offerings/services" className={navLinkStyle}>
+    {({ isActive }) => (
+      <>
+        {/* We add a little padding-bottom (pb-2) to give the underline some breathing room */}
+        <div className="pb-2">
+          <NavItem label="Services" Icon={Stethoscope} isActive={isActive} />
+        </div>
+        <GradientUnderline isActive={isActive} />
+      </>
+    )}
+  </NavLink>
+</li>
 
-          <li>
-            <NavLink to="/symptoms" className={navLinkStyle}>
-              {({ isActive }) => <NavItem label="Symptoms" Icon={Activity} isActive={isActive} />}
-            </NavLink>
-          </li>
+        <li>
+      <NavLink to="/symptoms" className={navLinkStyle}>
+    {({ isActive }) => (
+      <>
+        <div className="flex items-center gap-2 pb-1"> {/* Added pb-1 for spacing */}
+          <Activity size={18} className={isActive ? "text-[#095884]" : "group-hover:text-[#A1C948] transition-colors"} />
+          <span>Symptoms</span>
+        </div>
+        <GradientUnderline isActive={isActive} />
+      </>
+    )}
+  </NavLink>
+</li>
 
           {/* <li>
             <NavLink to="/blogs" className={navLinkStyle}>
@@ -107,28 +137,28 @@ function Navbar() {
           </li> */}
 
 
-           <li 
-            className="relative"
+          <li 
+            className="relative group"
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
-            <button className={`flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all duration-300 font-medium ${dropdownOpen ? "text-[#095884] bg-gray-50" : "text-gray-600 hover:text-[#095884]"}`}>
-              <Pill size={18} className={`transition-colors ${dropdownOpen ? 'text-[#A1C948]' : 'text-gray-400'}`} />
-              Our Offerings 
+            <button className={`relative flex items-center gap-3 px-1 transition-all duration-300 font-medium pb-2 ${dropdownOpen ? "text-[#095884]" : "text-gray-600 hover:text-[#095884]"}`}>
+              <Pill size={18} className={`transition-colors ${dropdownOpen ? 'text-[#A1C948]' : 'text-gray-400 group-hover:text-[#A1C948]'}`} />
+              <span>Our Offerings</span>
               <ChevronDown size={16} className={`transition-transform duration-500 ${dropdownOpen ? 'rotate-180' : ''}`} />
+              <GradientUnderline isActive={dropdownOpen} />
             </button>
 
-            {/* Dropdown Menu */}
             <ul className={`absolute left-0 mt-2 w-64 bg-white shadow-2xl rounded-2xl border border-gray-100 p-2 transition-all duration-300 transform origin-top
-              ${dropdownOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 invisible'}`}>
+              ${dropdownOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-95 -translate-y-2 invisible'}`}>
               <li>
-                <NavLink to="/offerings/treatments" className="flex items-center gap-3 px-4 py-3 text-sm hover:bg-blue-50 rounded-xl transition-colors group/item">
+                <NavLink to="/offerings/treatments" className="flex items-center gap-3 px-4 py-3 text-sm hover:bg-blue-50 rounded-xl transition-colors group/item" onClick={() => setDropdownOpen(false)}>
                   <Thermometer size={16} className="text-[#A1C948] group-hover/item:rotate-12 transition-transform" />
                   Treatments Offered
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/offerings/therapies" className="flex items-center gap-3 px-4 py-3 text-sm hover:bg-blue-50 rounded-xl transition-colors group/item">
+                <NavLink to="/offerings/therapies" className="flex items-center gap-3 px-4 py-3 text-sm hover:bg-blue-50 rounded-xl transition-colors group/item" onClick={() => setDropdownOpen(false)}>
                   <HeartPulse size={16} className="text-[#A1C948] group-hover/item:rotate-12 transition-transform" />
                   Therapies Offered
                 </NavLink>
@@ -136,9 +166,14 @@ function Navbar() {
             </ul>
           </li>
 
-           <li>
+          <li>
             <NavLink to="/about" className={navLinkStyle}>
-              {({ isActive }) => <NavItem label="About Us" Icon={HeartPulse} isActive={isActive} />}
+              {({ isActive }) => (
+                <>
+                  <NavItem label="About Us" Icon={HeartPulse} isActive={isActive} />
+                  <GradientUnderline isActive={isActive} />
+                </>
+              )}
             </NavLink>
           </li>
 
