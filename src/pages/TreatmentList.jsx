@@ -65,5 +65,71 @@ export const TherapyList = [
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV2RRbatGk8qKMuMtbxc6XdmQ64fhpNFzBMA&s",
   
   },
-  
+  {
+  id: "vertigo-cervicogenic-headache-treatment",
+  title: "Vertigo & Cervicogenic Headache Treatment",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHQhrt4Lt3ORV41c_MhDcnbMdbIy8BT3HF8Q&s",
+  fullContent: "Vertigo and cervicogenic headaches are conditions commonly related to neck dysfunction, poor posture, or balance system disturbances. Physiotherapy plays a key role in identifying the root cause and providing effective, non-invasive treatment to relieve symptoms and restore normal function.",
+}, 
+{
+  id: "stroke-rehab",
+  title: "Stroke Rehabilitation",
+  image: "https://thephysioexperts.in/wp-content/uploads/2021/02/stroke-rehab.jpg",
+  fullContent: "Stroke Rehabilitation is a specialized physiotherapy program designed to help individuals regain movement, strength, balance, and independence after a stroke. Early and structured rehabilitation plays a crucial role in improving recovery and quality of life.",
+}, 
+
+{
+  id: "head-injury-rehab",
+  title: "Head Injury Rehabilitation",
+  image: "https://framerusercontent.com/images/1YV2jSiBIjhpGYpuS3gbsLiylM.jpg?width=1800&height=1200",
+  fullContent: "Head Injury Rehabilitation is a specialized physiotherapy program focused on restoring physical function, balance, coordination, and independence following a head or brain injury. Early and comprehensive rehabilitation plays a vital role in maximizing recovery and improving quality of life.",
+},
+
+{
+  id: "brachial-plexus-rehabilitation",
+  title: "Brachial Plexus Rehabilitation",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrShiuCSVNROicPT15l7wEAfivtKNxFSoQEQ&s",
+  fullContent: "The brachial plexus is a network of intertwined nerves that control movement and sensation in the arm and hand. A traumatic brachial plexus injury involves sudden damage to these nerves, and may cause weakness, loss of feeling, or loss of movement in the shoulder, arm, or hand.",
+},
+
+{
+  id: "bladder-and-bowel-rehab",
+  title: "Bladder and Bowel Rehabilitation",
+  image: "https://principleperformancehealth.com/wp-content/uploads/2024/07/Irritable_bowel_syndrome.jpg-1.webp",
+  fullContent: "Bladder and Bowel Rehabilitation is a specialized physiotherapy program focused on improving bladder and bowel control through targeted exercises, education, and behavioral strategies. It helps individuals manage incontinence and regain confidence in daily life.",
+},
+{
+  id: "post-covid-rehab",
+  title: "Post Covid Rehabilitation",
+  image: "https://sukino.com/wp-content/uploads/2023/03/DSC07434-copy-min-1-1024x682.jpg",
+  fullContent: "Post-COVID Rehabilitation is a specialized physiotherapy program designed to help individuals recover from physical and functional impairments following COVID-19 infection. It focuses on restoring strength, endurance, breathing capacity, and overall quality of life.",
+},
+
+{
+  id: "coma-care",
+  title: "Coma Care",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGWj0LB1L6hPMlkoVvh207Vzn_fFjPHInKqw&s",
+  fullContent: "Coma Care is a specialized physiotherapy and rehabilitation program designed to support patients in a comatose or minimally conscious state. The primary goal is to prevent complications, maintain body functions, and stimulate recovery during prolonged unconsciousness.",
+},
+
+{
+  id: "pain-management",
+  title: "Pain Management",
+  image: "https://irp.cdn-website.com/afe9686a/dms3rep/multi/Untitled+design+%2822%29.png",
+  fullContent:"Pain Management is a specialized physiotherapy approach focused on reducing pain, improving movement, and enhancing quality of life. It addresses both acute and chronic pain conditions using evidence-based, non-invasive techniques.",
+},
+
+{
+  id: "bedsore-management",
+  title: "Bedsore  Management",
+  image: "https://sorezecare.com/cdn/shop/articles/Shutterstock_127260299.png?v=1747813109",
+  fullContent:  "Bedsore Management is a specialized physiotherapy and care program aimed at preventing, treating, and promoting healing of pressure ulcers caused by prolonged immobility. Early intervention is essential to reduce complications and improve patient comfort.",
+},
+{
+  id: "swallowing-rehabilitation",
+  title: "Swallowing Rehabilitation",
+  image: "https://static.wixstatic.com/media/9dc13a_7afb83c54379464cbd9646b5a5610168~mv2.jpg/v1/crop/x_555,y_1481,w_4987,h_2035/fill/w_320,h_200,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Elderly%20people%20who%20have%20dysphagia%20due%20to%20eating.jpg",
+  fullContent:  "Swallowing Rehabilitation is a specialized therapy aimed at improving safe and effective swallowing in individuals with swallowing difficulties (dysphagia). It helps reduce the risk of choking, aspiration, and nutritional complications while improving overall quality of life.",
+}
+
 ]

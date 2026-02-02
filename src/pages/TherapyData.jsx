@@ -65,6 +65,38 @@
         image: "https://www.inmotionoc.com/wp-content/uploads/2021/07/physical-therapy-and-dementia-care-1024x563.jpg",
         category: "Advanced"
     },
+    
+ {
+  id: "iastm",
+  title: "Instrument Assisted Soft Tissue Mobilization (IASTM)",
+  desc: "IASTM works by applying controlled pressure to soft tissues using instruments made of stainless steel or other rigid materials. This technique enhances blood flow, breaks down scar tissue, and stimulates the body’s natural healing response, making it effective for both acute and chronic musculoskeletal conditions.",
+  image: "https://images.squarespace-cdn.com/content/v1/59d3f6bd9f745651d81db015/1521289346982-KXLCZO0D9BLZQO9RS12T/9.jpg",
+  fullContent: "Instrument Assisted Soft Tissue Mobilization (IASTM) is a specialized physiotherapy technique that uses ergonomically designed tools to detect and treat soft tissue restrictions. It helps improve movement, reduce pain, and promote tissue healing by addressing fascial tightness and muscle adhesions.",
+},
 
-    ];
+{
+  id: "acupuncture",
+  title: "Acupuncture",
+  desc: "In a physiotherapy setting, acupuncture (often dry needling or medical acupuncture) is used to target trigger points, reduce inflammation, improve blood circulation, and support pain management. It is commonly combined with exercise therapy and manual techniques for better recovery outcomes.",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNwG4vuBEtWkR4Dr-gycYpWpMDKUXC5bAnEw&s",
+  fullContent:  "Acupuncture is a therapeutic technique used in physiotherapy to relieve pain, reduce muscle tension, and promote natural healing. It involves the insertion of fine, sterile needles at specific points on the body to stimulate nerves, muscles, and connective tissues.",
+},
+
+{
+  id: "exercise-rehab",
+  title: "Exercise Rehab",
+  desc: "Exercise Rehab involves customized exercise programs tailored to an individual’s condition, goals, and abilities. These programs help correct movement patterns, reduce pain, rebuild muscle strength, and improve flexibility under professional supervision.",
+  image: "https://t4.ftcdn.net/jpg/03/17/00/83/360_F_317008354_h1R9iWx9fbLPZDFcqdQ6d6VSiIGMdbSA.jpg",
+  fullContent: "Exercise Rehabilitation is a structured physiotherapy approach focused on restoring strength, mobility, endurance, and function through targeted exercises. It is designed to support recovery from injury, surgery, or chronic conditions while improving overall physical performance.",
+    
+},
+
+{
+  id: "cupping",
+  title: "Cupping",
+  desc: "Exercise Rehab involves customized exercise programs tailored to an individual’s condition, goals, and abilities. These programs help correct movement patterns, reduce pain, rebuild muscle strength, and improve flexibility under professional supervision.",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCfPXpt8bBDozq-6Eo7PGW08LVgYt9oP-1ew&s",
+  fullContent: "Exercise Rehabilitation is a structured physiotherapy approach focused on restoring strength, mobility, endurance, and function through targeted exercises. It is designed to support recovery from injury, surgery, or chronic conditions while improving overall physical performance.",
+},
+ ];
     export const getTherapyById = (id) => TherapyList.find(t => t.id === id);

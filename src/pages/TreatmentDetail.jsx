@@ -20,7 +20,7 @@ const TherapyDetail = () => {
         {/* SIDEBAR: Table of Contents */}
         <aside className="lg:w-1/3">
           <div className="sticky top-28 bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-            <h2 className="text-2xl font-serif text-blue-950 mb-8 border-b pb-4">Contents</h2>
+            <h2 className="text-2xl font-poppins text-blue-950 mb-8 border-b pb-4">Contents</h2>
             <nav className="space-y-6">
               {therapy.faqs?.map((item, index) => (
                 <a 
@@ -43,7 +43,7 @@ const TherapyDetail = () => {
           {/* Header Image & Title */}
           <div className="mb-12">
             <img src={therapy.image} className="w-full h-[400px] object-cover rounded-[2.5rem] mb-8 shadow-md" />
-            <h1 className="text-4xl font-serif text-blue-950 mb-6">{therapy.title}</h1>
+            <h1 className="text-4xl font-poppins text-blue-950 mb-6">{therapy.title}</h1>
             <p className="text-gray-600 text-lg leading-relaxed border-l-4 border-teal-500 pl-6">
                {therapy.fullContent}
             </p>
@@ -54,7 +54,7 @@ const TherapyDetail = () => {
             {therapy.faqs?.map((item, index) => (
               <section key={index} id={`faq-${index}`} className="scroll-mt-32">
                 <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm">
-                  <h3 className="text-2xl font-serif text-blue-950 mb-4 flex items-center gap-3">
+                  <h3 className="text-2xl font-poppins text-blue-950 mb-4 flex items-center gap-3">
                     <CheckCircle className="text-teal-500" size={24} />
                     {item.question}
                   </h3>

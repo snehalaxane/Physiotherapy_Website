@@ -54,10 +54,71 @@ export const allSymptoms = {
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLqAutRvUrOHH_wA9PzPKC6HJKRTfks3SWTQ&s"
   },
    "complex-regional-pain-syndrome": {
-    title: "Complex Regional Pain Syndrome",
+    title: "Complex Regional Pain",
     excerpt: "Complex Regional Pain Syndrome (CRPS) is marked by intense pain and skin changes. Explore the key symptoms like swelling, abnormal hair growth, and joint stiffness, and how physiotherapy can aid in managing this debilitating condition.",
     treatments: "Treatment includes cervical traction, manual therapy, and posture correction.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRymwIys_k-l2mgRNU-zpj3pVnfklsdbbGKoA&s"
-  }
+    image: "https://upload.orthobullets.com/topic/6095/images/rsd%20foot.jpg"
+  },
+   "back-pain": {
+    title: "Back Pain",
+    excerpt: "Learning about back pain is not something new, as most of you have faced it at least once in your lifetime. Sometimes, back pain can have some causes, which are not because of any underlying diseases. It can be the result of working out or lifting too much, prolonged lying down or sitting, sleeping in an uncomfortable position, or even wearing a poorly fitted backpack.",
+    treatments: "Passive physical therapy, which includes things that the patients covered in the past like heat application, electric stimulation, and ice packs, kinesio taping therapy, dry needing, manual Therapy, PEMF therapy. Active physical therapy, which primarily focuses on specified stretching and exercises",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjvk-opbY8XJep0AxVDsO7MhrKqqWb7LMhzg&s"
+  },
+    "cracking-joints": {
+    title: "Cracking Joints",
+    excerpt: "Cracking joints is manipulating joints to produce distinct cracking or popping sound.It is sometimes performed by chiropractors, physical therapists, and osteopaths.",
+    treatments: "Passive physical therapy, which includes things that the patients covered in the past like heat application, electric stimulation, and ice packs, kinesio taping therapy, dry needing, manual Therapy, PEMF therapy. Active physical therapy, which primarily focuses on specified stretching and exercises",
+    image: "https://images.theconversation.com/files/262912/original/file-20190308-155539-16odgxp.jpg?ixlib=rb-4.1.0&rect=0%2C115%2C998%2C498&q=45&auto=format&w=1356&h=668&fit=crop"
+  },
+   "shoulder-pain": {
+    title: "Shoulder Pain",
+    excerpt: "The Shoulder, known for its exceptional mobility, is a complex joint comprising a delicate balance of muscles, ligaments, tendons, and the labrum. Its flexibility allows for a wide range of motions, making it prone to pain and injury.",
+    treatments: "Passive physical therapy, which includes things that the patients covered in the past like heat application, electric stimulation, and ice packs, kinesio taping therapy, dry needing, manual Therapy, PEMF therapy. Active physical therapy, which primarily focuses on specified stretching and exercises",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtp-geee9lhWqeko4MYTj4Utdwbv1JPm1vvg&s"
+  },
+  "inflammation": {
+    title: "Inflammation",
+    excerpt: "You must be wondering what is inflammation. Inflammation is a response triggered by damages to the living tissues.The inflammatory response is targeted to be a defense mechanism that evolved in some higher organisms for protecting them from injury and infection.",
+    treatments: "Passive physical therapy, which includes things that the patients covered in the past like heat application, electric stimulation, and ice packs, kinesio taping therapy, dry needing, manual Therapy, PEMF therapy. Active physical therapy, which primarily focuses on specified stretching and exercises",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOFQ-xcFBo4CbbO1F0XeBpgcy-fVNXvbR40g&s"
+  },
+  "numbness-tingling": {
+    title: "Numbness and Tingling",
+    excerpt: "Usually, numbness and tingling can be termed as unusual prickling sensations, which can take part in any portion of your body. People will notice such sensations in the legs, arms, feet, and hands.",
+    treatments: "Passive physical therapy, which includes things that the patients covered in the past like heat application, electric stimulation, and ice packs, kinesio taping therapy, dry needing, manual Therapy, PEMF therapy. Active physical therapy, which primarily focuses on specified stretching and exercises",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZuXfUcncdGbjugWlPZHlUmOvnUXliZ8eGzw&s"
+  },
+  "knee-pain": {
+    title: "Knee Pain",
+    excerpt: "It is not that difficult to come across people suffering from knee pain, especially with growing age or with some knee injuries.",
+    treatments: "Passive physical therapy, which includes things that the patients covered in the past like heat application, electric stimulation, and ice packs, kinesio taping therapy, dry needing, manual Therapy, PEMF therapy. Active physical therapy, which primarily focuses on specified stretching and exercises",
+    image: "https://burjeel.com/wp-content/uploads/2022/06/Knee-Pain.jpg"
+  },
+  "loss-of-balance": {
+    title: "Loss of Balance",
+    excerpt: "It is quite common to feature loss of balance, especially in people with growing age. Balance is the ability for the person to maintain the center of gravity within base support.",
+    treatments: "Passive physical therapy, which includes things that the patients covered in the past like heat application, electric stimulation, and ice packs, kinesio taping therapy, dry needing, manual Therapy, PEMF therapy. Active physical therapy, which primarily focuses on specified stretching and exercises",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSChaMcbCeiiWF4jMSrGxlTAOpdNuWx_gVxnQ&s"
+  },
+   "tremors": {
+    title: "Tremors",
+    excerpt: "The tremors are mainly defined as involuntary or rhythmic oscillatory movements and are also considered to be a common form of movement disorders.",
+    treatments: "Passive physical therapy, which includes things that the patients covered in the past like heat application, electric stimulation, and ice packs, kinesio taping therapy, dry needing, manual Therapy, PEMF therapy. Active physical therapy, which primarily focuses on specified stretching and exercises",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_8dIx00WIZMsWX8SHFvzTyLus9cZqUj66cw&s"
+  },
+  "Neck Pain": {
+    title: "Neck Pain",
+    excerpt: "The neck pain is stated to be a very common condition, which will start from the neck portion and is related to the upper shoulder.",
+    treatments: "Passive physical therapy, which includes things that the patients covered in the past like heat application, electric stimulation, and ice packs, kinesio taping therapy, dry needing, manual Therapy, PEMF therapy. Active physical therapy, which primarily focuses on specified stretching and exercises",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9pDhML8g5GSQRUmCssMPn85cP_ec6jyeQFQ&s"
+  },
+   "muscle-stiffness": {
+    title: "Muscle Stiffness",
+    excerpt: "The muscle stiffness is when the muscles start to feel tight and find it more difficult to just move than you do mostly, mainly after rest.",
+    treatments: "Passive physical therapy, which includes things that the patients covered in the past like heat application, electric stimulation, and ice packs, kinesio taping therapy, dry needing, manual Therapy, PEMF therapy. Active physical therapy, which primarily focuses on specified stretching and exercises",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhskI17NZFij4438oIeJtVozmi3V3AgorhSA&s"
+  },
+
 
 };

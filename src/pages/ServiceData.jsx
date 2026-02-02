@@ -65,33 +65,6 @@ export const allServices = [
   }
 },
 
- {
-  id: "vestibular-rehab",
-  title: "Vestibular Rehabilitation (VRT)",
-  desc: "An exercise-based clinical program designed to promote central nervous system compensation for inner ear deficits and balance disorders.",
-  image: "https://plus.unsplash.com/premium_photo-1702598939246-e415d02c24a3?q=80&w=2094&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  icon: <Activity className="text-teal-600" />, // Changed from Scissors to Activity for a clinical look
-  color: "bg-teal-50",
-  fullContent: {
-    introduction: "Vestibular Rehabilitation Therapy (VRT) is a specialized form of physical therapy aimed at alleviating the primary and secondary effects of vestibular disorders. Dizziness and balance impairment are leading causes of restricted mobility, particularly in patients over 75, where falls represent a significant clinical risk. VRT utilizes targeted neuro-plasticity to retrain the brain to process signals from the vestibular system in coordination with visual and proprioceptive input, ultimately stabilizing the patient's gaze and gait.",
-    
-    types: "VRT is a highly customized protocol focusing on three primary therapeutic pathways: \n• Habituation Training: Targeted exposure to specific visual or motion stimuli to desensitize the nervous system and reduce dizziness triggered by quick head movements or complex environments. \n• Gaze Stabilization: Specialized oculomotor exercises (such as VOR x1 and x2) designed to improve eye-head coordination and eliminate 'bouncing' vision (oscillopsia). \n• Balance & Proprioceptive Retraining: A combination of static and dynamic exercises—utilizing somatosensory cues and dual-tasking—to enhance postural stability during activities of daily living.",
-
-    whenToSee: "Clinical intervention is recommended for individuals experiencing chronic vertigo, persistent 'off-balance' sensations, or vestibular migraines. Specific red flags include: \n• Benign Paroxysmal Positional Vertigo (BPPV) symptoms \n• Oscillopsia (blurred vision during head movement) \n• Frequent stumbling or unexplained falls \n• Spatial disorientation or a 'floating' sensation \n• Motion sensitivity in visually stimulating environments.",
-
-    risks: [
-      "Increased fall risk and secondary skeletal injuries",
-      "Compromised safety during essential tasks (e.g., driving, cooking)",
-      "Social isolation and anxiety-related 'fear of falling'",
-      "Deconditioning due to self-imposed activity restriction",
-      "Persistent postural-perceptual dizziness (PPPD)"
-    ],
-    
-    prevention: "While many vestibular issues are idiopathic or age-related, risk can be mitigated through: \n• Neuro-Vascular Health: Managing cardiovascular health and diet to reduce the frequency of vestibular migraines. \n• Environmental Safety: Ergonomic modifications at home to prevent secondary injuries from falls. \n• Early Intervention: Prompt clinical assessment of 'minor' dizzy spells to prevent the development of permanent balance deficits.",
-
-    treatments: "Our VRT clinics in Hyderabad and Bangalore employ advanced diagnostic and therapeutic maneuvers: \n• Canalith Repositioning Procedures (CRP): Specialized maneuvers, such as the Epley or Semont Maneuvers, to treat BPPV by relocating displaced otoliths within the inner ear. \n• Progressive Oculomotor Training: Clinically supervised eye-movement protocols. \n• Customized Home Exercise Programs (HEP): Structured balance retraining that evolves as the patient’s neurological compensation improves. \n• Dietary Optimization: Identification of nutritional triggers for patients suffering from vestibular migraines or endolymphatic hydrops."
-  }
-},
 
  {
   id: "pediatric-physiotherapy",
@@ -186,37 +159,6 @@ export const allServices = [
   }
 },
 
-  {
-  id: "chiropractor-treatment",
-  title: "Chiropractic Care & Spinal Alignment",
-  desc: "A specialized healthcare discipline focused on the diagnosis and manual treatment of mechanical disorders of the musculoskeletal system, particularly the spine.",
-  image: "https://plus.unsplash.com/premium_photo-1682094353412-c68d7cc503bc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  icon: <Activity className="text-teal-600" />, // Changed from Scissors to Activity for a modern health feel
-  color: "bg-teal-50",
-  fullContent: {
-    introduction: "Chiropractic therapy is a non-invasive, evidence-based clinical approach centered on spinal health and its direct correlation with the nervous system. Our specialists utilize precise manual adjustments to correct vertebral subluxations (misalignments), which can interfere with neural communication and physical mobility. By restoring structural integrity to the spine, chiropractic care facilitates the body's innate regenerative processes, reduces chronic inflammation, and optimizes overall biomechanical function.",
-    
-    types: "Our chiropractic clinic utilizes advanced mechanical and manual modalities: \n• High-Velocity Low-Amplitude (HVLA) Adjustments: Traditional manual thrusts to restore joint cavitation and mobility. \n• Spinal Traction & Decompression: Controlled mechanical force used to create space between vertebrae, relieving pressure on spinal discs and exiting nerve roots. \n• Flexion-Distraction Technique: A specialized, rhythmic decompression therapy performed on a moving table—ideal for treating herniated discs and spinal stenosis with minimal patient discomfort. \n• Myofascial Trigger Point Therapy: Addressing the soft-tissue tension that often accompanies spinal misalignment.",
-
-    whenToSee: "Early chiropractic intervention is recommended for individuals experiencing: \n• Chronic spinal pain (Cervical, Thoracic, or Lumbar). \n• Radiculopathy (numbness, tingling, or 'pins and needles' in the extremities). \n• Sciatica and radiating leg pain. \n• Frequent tension headaches or migraines originating from the neck. \n• Restricted range of motion or postural imbalances resulting from sedentary work environments.",
-
-    risks: [ 
-      "Herniated and Bulging Intervertebral Discs",
-      "Sciatica and Piriformis Syndrome",
-      "Spondylosis and Degenerative Joint Disease",
-      "Whiplash and Acute Neck Injuries",
-      "Kyphosis and Scoliosis-related discomfort",
-      "Facet Joint Syndrome",
-      "Postural Fatigue and Ergonomic Strain"
-    ],
-    
-    prevention: "Preventive Chiropractic care focuses on 'Spinal Hygiene' to mitigate the cumulative effects of gravity and daily stress. Regular postural screenings and maintenance adjustments can prevent the progression of minor misalignments into chronic degenerative conditions. We emphasize ergonomic education—modifying workspace setups and sleeping postures—to ensure that the structural gains achieved in the clinic are maintained in your daily life.",
-
-    treatments: "Our chiropractic treatment plans are data-driven and multi-modal: \n• Comprehensive Orthopedic & Neurological Assessments: Utilizing physical exams and imaging reviews to isolate the root cause of dysfunction. \n• Diversified Spinal Manipulation: Targeted adjustments to improve spinal segment mobility. \n• Personalized Kinesiology Exercises: Custom stretching and strengthening to support the newly aligned spinal structure. \n• Posture Re-training: Specific protocols to correct 'Forward Head Posture' and other common structural imbalances. \n• Nutritional & Lifestyle Guidance: Advice on anti-inflammatory diets to support musculoskeletal healing."
-  }
-},
-
-
  {
     id: "sports-physiotherapy",
     title: "Sports Injury & Performance Physiotherapy",
@@ -302,5 +244,152 @@ export const allServices = [
 
     treatments: "We utilize portable clinical technology to provide advanced treatments at your bedside: \n• Portable Electrotherapy (TENS/EMS): Targeted pain management and muscle stimulation. \n• Clinical Manual Therapy: Specialized mobilization and myofascial release performed in-home. \n• Medical Taping & Splinting: Structural support for joints and connective tissue to aid the healing process. \n• Home-Based Dry Needling & Acupuncture: Minimally invasive pain relief following strict sterile protocols. \n• Functional Re-training: Practicing 'Activities of Daily Living' (ADLs) such as safely navigating the patient's own kitchen, bathroom, and stairs."
   }
-}
+},
+
+
+{
+  id: "gynecology-rehab",
+  title: "Gynecology Rehabilitation",
+  desc: "Gynecological conditions can affect pelvic floor muscles, posture, core stability, and daily activities. Physiotherapy addresses pelvic floor dysfunction, pain, weakness, and movement limitations through personalized, non-invasive rehabilitation programs.",
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTBrpbhR_vTYiY93H0UeJ15rr4mxrTMEkOw&s",
+  icon: <Home className="text-teal-600" />, // Changed from Scissors to Home for immediate relevance
+  color: "bg-teal-50",
+  fullContent: {
+    introduction: "Gynecology Rehabilitation is a specialized physiotherapy program focused on improving pelvic health, strength, and function in women. It helps manage conditions related to pregnancy, childbirth, hormonal changes, and gynecological surgeries, enhancing overall quality of life.",
+types: "Gynecology Rehabilitation offers specialized physiotherapy programs tailored to women’s pelvic health needs.\n• Pelvic Floor Rehabilitation: Strengthening or relaxation training to restore pelvic floor muscle function.\n• Antenatal Rehabilitation: Exercise guidance and education to support physical health during pregnancy.\n• Postnatal Rehabilitation: Recovery-focused therapy to regain strength and stability after childbirth.\n• Post-Gynecological Surgery Rehabilitation: Restoring mobility and function following hysterectomy or other gynecological procedures.\n• Menstrual and Pelvic Pain Management: Non-invasive techniques to reduce pain and improve comfort."
+,    whenToSee: "Gynecology Rehabilitation should be considered when pelvic health issues affect comfort, function, or quality of life.\n• Pelvic Pain or Discomfort: Ongoing pain in the pelvic region or lower abdomen.\n• Urinary or Bowel Incontinence: Leakage or difficulty controlling bladder or bowel function.\n• Pain During Intercourse: Discomfort affecting intimacy and daily life.\n• Postnatal Weakness or Core Instability: Reduced strength or abdominal separation after childbirth.\n• Post-Surgical Recovery Challenges: Difficulty regaining function after gynecological surgery.",
+    risks: [ 
+      "Mild discomfort during pelvic floor assessment or exercises", 
+      "Temporary muscle soreness or fatigue",
+   "Emotional discomfort during initial sessions",
+   "Minimal risks when therapy is performed by trained pelvic health professionals",
+    ],
+    
+    prevention: "Many gynecological conditions can be prevented or minimized with proactive care and lifestyle management.\n• Pelvic Floor Strengthening: Regular exercises to maintain muscle support and control.\n• Correct Posture and Body Mechanics: Reducing strain on pelvic and core muscles.\n• Regular Physical Activity: Maintaining overall strength, flexibility, and circulation.\n• Healthy Weight Management: Minimizing excess pressure on pelvic structures.\n• Early Physiotherapy Intervention: Preventing complications during pregnancy and postpartum recovery.",
+
+    treatments: "Gynecology Rehabilitation focuses on restoring pelvic health through personalized therapeutic approaches.\n• Pelvic Floor Muscle Training: Targeted exercises to improve strength, coordination, or relaxation.\n• Core Stabilization Exercises: Enhancing abdominal and spinal support.\n• Posture Correction: Improving alignment to reduce pelvic and lower back strain.\n• Breathing and Relaxation Techniques: Supporting muscle control and pain reduction.\n• Pain Management Strategies: Non-invasive methods to relieve pelvic and menstrual pain.\n• Patient Education and Lifestyle Guidance: Empowering long-term pelvic health and recovery."
+  }
+},
+
+{
+  id: "cardio-pulmonary-rehab",
+  title: "Cardio Pulmonary Rehabilitation",
+  desc: "Heart and lung conditions can lead to breathlessness, fatigue, reduced stamina, and limited daily activity. Cardio Pulmonary Rehabilitation focuses on improving cardiovascular fitness, breathing efficiency, and functional capacity through individualized and monitored rehabilitation programs.",
+  image: "https://www.lyfstylewellness.com/wp-content/uploads/2022/07/cardiac-rehabilitation-clinic-india.webp",
+  icon: <Home className="text-teal-600" />, // Changed from Scissors to Home for immediate relevance
+  color: "bg-teal-50",
+  fullContent: {
+    introduction: "Cardio Pulmonary Rehabilitation is a structured physiotherapy program designed to improve heart and lung function, physical endurance, and overall quality of life in individuals with cardiac and respiratory conditions. It supports safe recovery and long-term health through supervised exercise and education.",
+    
+    types: "Cardio Pulmonary Rehabilitation offers structured programs based on individual cardiac and respiratory needs.\n• Cardiac Rehabilitation: Supports recovery after heart attack, cardiac surgery, or chronic heart disease.\n• Pulmonary Rehabilitation: Manages long-term respiratory conditions such as COPD, asthma, and post-infection lung disorders.\n• Post-Surgical Cardio Pulmonary Rehabilitation: Restores endurance and breathing capacity after heart or lung surgery.\n• Post-ICU Rehabilitation: Improves strength, mobility, and respiratory function following prolonged critical illness or ventilator support.",
+    whenToSee: "Cardio Pulmonary Rehabilitation should be considered when heart or lung conditions limit physical capacity or daily function.\n• Persistent Breathlessness: Shortness of breath during rest or minimal activity.\n• Reduced Exercise Tolerance: Difficulty walking, climbing stairs, or performing routine tasks.\n• Post-Cardiac or Respiratory Illness Recovery: Weakness or fatigue after heart or lung-related conditions.\n• Chest Fatigue or Low Stamina: Early exhaustion during physical effort.\n• Post-Surgical or ICU Recovery Challenges: Difficulty regaining strength and confidence after hospitalization.",
+    risks: [ 
+      "Temporary fatigue after exercise sessions", 
+      "Mild breathlessness during initial training phases",
+   "Muscle soreness due to deconditioning",
+   "Risk of overexertion without proper monitoring",
+    ],
+    
+    prevention: "Long-term heart and lung complications can be minimized through proactive lifestyle and rehabilitation strategies.\n• Regular Physical Activity: Maintaining cardiovascular and respiratory fitness.\n• Breathing Exercises: Improving lung efficiency and oxygen utilization.\n• Smoking Cessation: Reducing further damage to heart and lung tissues.\n• Healthy Weight and Nutrition: Supporting metabolic and cardiovascular health.\n• Stress Management and Early Rehabilitation: Preventing deconditioning after illness or surgery.",
+
+    treatments: "Cardio Pulmonary Rehabilitation focuses on improving endurance, strength, and breathing efficiency through monitored therapy.\n• Breathing Retraining: Techniques to enhance lung expansion and breathing control.\n• Aerobic Conditioning: Safe cardiovascular exercises to improve stamina.\n• Strength and Endurance Training: Building muscle strength to support daily activities.\n• Posture Correction: Optimizing breathing mechanics and reducing strain.\n• Relaxation Techniques: Managing breathlessness, anxiety, and fatigue.\n• Patient Education: Teaching self-monitoring, lifestyle modification, and safe activity progression."
+  }
+},
+
+{
+  id: "speech-rehab",
+  title: "Speech Rehabilitation",
+  desc: "Speech and communication difficulties can arise due to stroke, head injury, neurological disorders, developmental delays, or post-surgical conditions. Speech Rehabilitation works on improving speech production, language comprehension, voice quality, cognitive-communication skills, and swallowing through structured therapy programs.",
+  image: "https://abilitychildcare.in/img/48.jpg",
+  icon: <Home className="text-teal-600" />, // Changed from Scissors to Home for immediate relevance
+  color: "bg-teal-50",
+  fullContent: {
+    introduction: "Speech Rehabilitation is a specialized therapy focused on improving communication, speech clarity, language skills, and swallowing function in individuals affected by neurological or developmental conditions. It plays a key role in enhancing independence and quality of life.",
+    
+    types: "Speech Rehabilitation provides targeted therapy programs based on individual communication needs.\n• Post-Stroke Speech Rehabilitation: Restores speech clarity, language comprehension, and communication after stroke.\n• Pediatric Speech Rehabilitation: Supports children with developmental speech and language delays.\n• Neurogenic Speech Rehabilitation: Manages speech and communication difficulties caused by Parkinson’s disease, traumatic brain injury, or neurological disorders.\n• Swallowing (Dysphagia) Rehabilitation: Improves safe swallowing, feeding skills, and airway protection.",
+    whenToSee: "Speech Rehabilitation should be considered when communication or swallowing difficulties affect daily life.\n• Difficulty Speaking or Slurred Speech: Reduced clarity or fluency in speech production.\n• Language Comprehension Problems: Difficulty understanding spoken or written language.\n• Voice Changes: Hoarseness, reduced volume, or altered voice quality.\n• Swallowing Difficulties: Choking, coughing, or discomfort during eating and drinking.\n• Post-Illness or Developmental Concerns: Communication challenges following illness, injury, or developmental delay.",
+    risks: [ 
+      "Temporary vocal fatigue after therapy sessions", 
+      "Mild frustration during early learning phases",
+   "Fatigue during cognitive or speech exercises",
+   "Minimal risks when therapy is guided by trained professionals",
+    ],
+    
+    prevention: "Long-term speech and communication difficulties can be minimized through early care and healthy communication habits.\n• Early Screening and Intervention: Identifying speech or swallowing issues at an early stage.\n• Regular Communication Practice: Maintaining speech, language, and cognitive engagement.\n• Cognitive Stimulation: Supporting brain health through mental activities.\n• Voice Care and Hygiene: Preventing vocal strain and voice disorders.\n• Early Rehabilitation After Neurological Events: Reducing long-term communication impairments.",
+
+    treatments: "Speech Rehabilitation focuses on improving communication and swallowing through structured therapeutic techniques.\n• Speech and Language Exercises: Enhancing articulation, fluency, and language skills.\n• Voice Therapy: Improving voice strength, quality, and endurance.\n• Cognitive-Communication Training: Supporting attention, memory, and communication effectiveness.\n• Swallowing Therapy: Strengthening muscles involved in safe swallowing.\n• Alternative Communication Strategies: Introducing assistive communication methods when needed.\n• Caregiver Education: Training family members to support communication goals at home."
+  }
+},
+
+{
+  id: "occupational-theraphy",
+  title: "Occupational Theraphy",
+  desc: "Occupational Therapy addresses physical, cognitive, sensory, and coordination challenges that affect a person’s ability to perform daily tasks. Therapy aims to restore function, adapt activities, and modify environments to support safe and independent living.",
+  image: "https://westcoastuniversity.edu/wp-content/uploads/2024/08/Occupational-Therapy-for-Kids-m.jpg",
+  icon: <Home className="text-teal-600" />, // Changed from Scissors to Home for immediate relevance
+  color: "bg-teal-50",
+  fullContent: {
+    introduction: "Occupational Therapy is a specialized rehabilitation service that helps individuals regain independence in daily activities following injury, illness, or disability. It focuses on improving functional abilities needed for self-care, work, and everyday life.",
+whenToSee: "Occupational Therapy may be needed when physical, cognitive, or sensory limitations affect daily functioning.\n• Difficulty with Self-Care Activities: Challenges in dressing, bathing, eating, or grooming independently.\n• Work or School Performance Issues: Trouble managing writing, typing, or job-related tasks.\n• Neurological or Orthopedic Conditions: Functional limitations following stroke, injury, or surgery.\n• Developmental Challenges: Delays in fine motor skills, coordination, or sensory processing in children.",    
+types: "Occupational Therapy offers specialized programs based on individual functional needs.\n• Neurological Occupational Therapy: Supports recovery of daily living skills after stroke, head injury, or neurological disorders.\n• Pediatric Occupational Therapy: Helps children with developmental delays, sensory integration issues, and motor coordination challenges.\n• Orthopedic Occupational Therapy: Focuses on restoring function after fractures, surgeries, or hand and upper-limb injuries.\n• Geriatric Occupational Therapy: Promotes independence, safety, and mobility in older adults.\n• Hand Therapy & Fine Motor Rehabilitation: Improves hand strength, dexterity, and coordination for daily activities.",   
+    risks: [ 
+      "Temporary fatigue during task-based therapy", 
+      "Mild frustration while learning new skills",
+   "Muscle soreness with repetitive activity practice",
+   "Minimal risks when therapy is guided by trained professionals",
+    ],
+    
+prevention: "Long-term functional limitations can be reduced through early intervention and adaptive strategies.\n• Early Rehabilitation: Prompt therapy to restore functional abilities after injury or illness.\n• Ergonomic Adaptations: Modifying workspaces and daily environments to reduce strain.\n• Regular Activity Practice: Maintaining mobility and fine motor skills through daily use.\n• Proper Body Mechanics: Using correct movement techniques to prevent overuse and injury.",
+treatments: "Occupational Therapy treatment focuses on improving independence and quality of life through functional training.\n• Functional Task Training: Practicing real-life activities such as dressing, feeding, and household tasks.\n• Hand and Fine Motor Exercises: Strengthening and coordination activities for hand function.\n• Cognitive Rehabilitation: Improving attention, memory, and problem-solving for daily tasks.\n• Adaptive Equipment Training: Learning to use assistive devices for safer independence.\n• Sensory Integration Therapy: Managing sensory processing difficulties, especially in children.\n• Caregiver Education: Training family members to support therapy goals at home.",
+  }
+},
+
+{
+  id: "cognitive-rehabilitation",
+  title: "Cognitive Rehabilitation",
+  desc: "Cognitive difficulties can occur due to stroke, head injury, neurological disorders, post-COVID conditions, or aging. Cognitive Rehabilitation aims to restore impaired cognitive functions, develop compensatory strategies, and improve overall mental performance through structured therapeutic programs.",
+  image: "https://sukinohealthcare.com/wp-content/uploads/2023/06/Cognitive-Rehabilitation-Exercises.webp",
+  icon: <Home className="text-teal-600" />, // Changed from Scissors to Home for immediate relevance
+  color: "bg-teal-50",
+  fullContent: {
+    introduction: "Cognitive Rehabilitation is a specialized therapy focused on improving thinking skills such as memory, attention, problem-solving, and executive function after injury or illness. It helps individuals regain independence and improve daily functioning.",
+    whenToSee: "Cognitive Rehabilitation should be considered when changes in thinking abilities affect daily life and independence.\n• Memory Difficulties: Frequent forgetfulness, trouble recalling recent events, or difficulty learning new information.\n• Reduced Attention and Concentration: Difficulty staying focused, easily distracted, or mentally fatigued.\n• Impaired Problem-Solving or Decision-Making: Trouble planning, organizing tasks, or making everyday decisions.\n• Confusion or Disorientation: Feeling confused about time, place, or routine activities.\n• Post-Neurological or Medical Conditions: Cognitive challenges following stroke, head injury, neurological disorders, or post-COVID recovery.",
+types: "Cognitive Rehabilitation includes specialized programs tailored to the individual’s cognitive deficits.\n• Post-Stroke Cognitive Rehabilitation: Focuses on improving memory, attention, reasoning, and problem-solving skills following a stroke.\n• Traumatic Brain Injury (TBI) Cognitive Rehabilitation: Aims to restore cognitive functions such as attention, processing speed, and executive control after head injury.\n• Neurodegenerative Cognitive Rehabilitation: Provides supportive strategies to manage cognitive decline in conditions like Parkinson’s disease or dementia.\n• Post-Illness Cognitive Rehabilitation: Helps manage brain fog, reduced concentration, and mental fatigue after COVID or prolonged illness.",    
+    risks: [ 
+      "Mental fatigue during therapy sessions", 
+      "Frustration during challenging cognitive tasks",
+   "Temporary headache or tiredness",
+   "Minimal risks when therapy is guided by trained professionals",
+    ],
+    
+prevention: "Long-term cognitive decline can be reduced through proactive lifestyle and rehabilitation strategies.\n• Mental Stimulation: Engaging in activities that challenge memory, attention, and problem-solving skills.\n• Healthy Sleep Habits: Maintaining consistent sleep routines to support brain recovery and cognitive performance.\n• Regular Physical Activity: Improving blood flow and neural health through movement and exercise.\n• Stress Management: Reducing mental fatigue and cognitive overload through relaxation techniques.\n• Early Rehabilitation: Timely cognitive therapy after neurological events to prevent further decline.",
+treatments: "Cognitive Rehabilitation treatment focuses on restoring and enhancing cognitive function through structured therapeutic interventions.\n• Memory Training: Exercises designed to improve short-term and long-term memory skills.\n• Attention and Concentration Exercises: Activities that enhance focus, processing speed, and mental endurance.\n• Problem-Solving Tasks: Structured challenges to improve reasoning, planning, and decision-making abilities.\n• Executive Function Training: Programs aimed at improving organization, multitasking, and self-regulation skills.\n• Compensatory Strategy Development: Teaching adaptive techniques to manage cognitive limitations in daily life.\n• Caregiver Education: Guidance and training to support cognitive recovery at home and in daily routines."
+  }
+},
+
+
+{
+  id: "tele-physiotherapy",
+  title: "Tele-physiotherapy",
+  desc: "Tele-physiotherapy is virtual physiotherapy, which uses telecommunications technology to conduct appointments at a distance. Tele-physiotherapy provides patient care including consultation, assessment, diagnosis, and treatment plan. It uses techniques such as video calling, email, and various applications. ",
+  image: "https://www.arogyaphysio.com/wp-content/uploads/2021/06/telehe.jpeg",
+  icon: <Home className="text-teal-600" />, // Changed from Scissors to Home for immediate relevance
+  color: "bg-teal-50",
+  fullContent: {
+    introduction: "Tele-Physiotherapy is a modern physiotherapy service where assessment, treatment guidance, and rehabilitation are delivered remotely through video calls, phone consultations, or digital platforms. It allows patients to receive professional physiotherapy care from their home under the supervision of a licensed physiotherapist. Tele-physiotherapy focuses on guided exercises, posture correction, pain management strategies, education, and progress monitoring, making it a convenient and safe option for people with mobility limitations, busy schedules, or limited access to in-clinic care.",
+    whenToSee: "Tele-Physiotherapy is suitable when in-person visits are difficult or when continued guidance is needed.\n• Mobility Limitations: Difficulty traveling due to pain, disability, or recovery phase.\n• Post-Surgical or Injury Recovery: Need for supervised exercises at home.\n• Chronic Pain or Long-Term Conditions: Regular follow-ups without frequent clinic visits.\n• Busy Schedules or Remote Locations: Limited access to physiotherapy centers.\n• Preventive Care and Exercise Guidance: Maintaining mobility and strength remotely.",
+types: "Tele-Physiotherapy delivers professional physiotherapy care remotely through secure virtual platforms.\n• Virtual Consultation: Online assessment, diagnosis guidance, and treatment planning.\n• Guided Exercise Therapy: Live or recorded exercise sessions supervised by a physiotherapist.\n• Post-Surgical Follow-Up: Remote monitoring and progression of rehabilitation programs.\n• Chronic Condition Management: Ongoing support for pain, mobility, and functional conditions.\n• Home-Based Rehabilitation Programs: Personalized exercise plans designed for safe practice at home.",    
+    risks: [ 
+      "Tele-Physiotherapy is generally safe when guided by trained professionals, but certain limitations may exist.", 
+      "Limited Physical Assessment: Hands-on examination and manual techniques cannot be performed remotely.",
+   "Incorrect Exercise Performance: Risk of improper technique if instructions are not followed carefully.",
+   "Technology Issues: Poor internet connection or device limitations may affect session quality.",
+   "Delayed Identification of Red Flags: Some conditions may require in-person evaluation for accurate diagnosis."
+    ],
+    
+prevention: "Tele-Physiotherapy helps prevent complications by promoting consistency and early intervention.\n• Regular Virtual Follow-Ups: Ensuring correct exercise technique and progression.\n• Early Identification of Issues: Addressing pain or movement problems before they worsen.\n• Home Exercise Compliance: Encouraging adherence to prescribed rehabilitation programs.\n• Posture and Movement Education: Preventing strain and injury during daily activities.\n• Lifestyle Guidance: Supporting long-term musculoskeletal and functional health.",
+treatments: "Tele-Physiotherapy provides effective rehabilitation through remote clinical guidance.\n• Exercise Prescription and Supervision: Customized programs delivered via video sessions.\n• Pain Management Techniques: Guided stretching, mobility, and relaxation strategies.\n• Posture and Ergonomic Training: Correcting movement habits at home or work.\n• Functional Training: Improving strength, balance, and coordination remotely.\n• Education and Self-Management Strategies: Empowering patients to manage recovery independently."
+  }
+},
+
 ];

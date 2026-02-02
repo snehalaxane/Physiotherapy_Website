@@ -50,9 +50,10 @@ const ServiceDetails = () => {
     { id: 'Overview', label: `What is ${service.title}?` },
     { id: 'Types', label: 'Types & Varieties' },
     { id: 'When', label: 'When to See Us' },
-    { id: 'Risks', label: 'Risks Involved' },
     { id: 'Prevention', label: 'How to Prevent' },
     { id: 'Treatments', label: 'Our Treatments' },
+    { id: 'Risks', label: 'Risks Involved' },
+
   ];
 
   return (

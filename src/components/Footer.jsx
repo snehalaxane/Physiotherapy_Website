@@ -69,7 +69,7 @@ const Footer = () => {
   <ul className="grid grid-cols-3 gap-x-10 gap-y-3 text-gray-400 text-sm">
   <li><Link to="/offerings/services/post-surgery-rehab" className="hover:text-[#A1C948] transition-colors">Post Surgery Rehab</Link></li>
   <li><Link to="/offerings/services/musculoskeletal-physiotherapy" className="hover:text-[#A1C948] transition-colors">Musculoskeletal</Link></li>
-  <li><Link to="/offerings/services/vestibular-rehab" className="hover:text-[#A1C948] transition-colors">Vestibular Rehab</Link></li>
+  <li><Link to="/offerings/services/cognitive-rehabilitation" className="hover:text-[#A1C948] transition-colors">Cognitive Rehab</Link></li>
   <li><Link to="/offerings/services/pediatric-physiotherapy" className="hover:text-[#A1C948] transition-colors">Paediatric Rehab</Link></li>
   <li><Link to="/offerings/services/womens-health" className="hover:text-[#A1C948] transition-colors">Women's health Rehab</Link></li>
   <li><Link to="/offerings/services/neuro-physiotherapy-rehab" className="hover:text-[#A1C948] transition-colors">Neuro Physiotherapy</Link></li>
@@ -80,6 +80,7 @@ const Footer = () => {
 </div>
 
           {/* Col 3: Quick Links (Added this to fill space) */}
+
           {/* <div>
             <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-6">Company</h4>
             <ul className="space-y-3 text-gray-400 text-sm">

@@ -26,7 +26,7 @@ const TherapyDetail = () => {
   // IF IT DOES NOT EXIST (Instead of crashing or looking for a missing file):
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#FDFCFB] px-6 text-center">
-      <h2 className="text-3xl font-serif text-[#095884] mb-4">Treatment Details Coming Soon</h2>
+      <h2 className="text-3xl font-poppins text-[#095884] mb-4">Treatment Details Coming Soon</h2>
       <p className="text-gray-500 max-w-md mb-8">
         We are currently preparing the detailed medical guide for <span className="font-bold text-[#A1C948]">"{id.replace(/-/g, ' ')}"</span>. 
         Please check back shortly or contact our clinic for more information.
