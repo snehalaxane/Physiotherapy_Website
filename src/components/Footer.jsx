@@ -23,7 +23,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0A1128] text-white pt-12 pb-6 px-8">
+    <footer className="bg-[#0A1128] text-white pt-4 pb-4 px-4">
       {/* Increased width to 100% or very wide container */}
       <div className="max-w-[1400px] mx-auto"> 
         
@@ -54,14 +54,43 @@ const Footer = () => {
         </div>
 
         {/* Tier 2: Navigation Grid - NOW FILLING ALL 5 COLUMNS */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 py-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-12 py-9">
           
           {/* Col 1: Contact */}
           <div className="col-span-2 lg:col-span-1">
             <h4 className="font-bold text-[#A1C948] uppercase tracking-wider text-sm mb-6">Contact Us</h4>
-            <ul className="space-y-4 text-gray-400 text-sm">
-              <li className="flex gap-3"><MapPin size={18} className="text-[#A1C948]" /> Hyderabad, India</li>
-              <li className="flex gap-3"><Phone size={18} className="text-[#A1C948]" /> +91 9700354747 / 9963573822</li>
+          <ul className="space-y-4 text-gray-400 text-sm">
+              <li className="flex items-start gap-3"><MapPin size={18} className="text-[#A1C948] shrink-0 mt-1"/>above Sathya Hospital jetta Mallaiah complex warangal-Bhoopalpatam highway, NH163, Uppal, Hyderabad, Telangana 500039</li>
+             
+             
+            <li className="flex items-center gap-3">
+  {/* Icon - Clicking this will dial the primary number */}
+  <a href="tel:+919700354747" className="hover:scale-110 transition-transform">
+    <Phone size={18} className="text-[#A1C948] shrink-0" />
+  </a>
+
+  <div className="flex flex-wrap gap-1">
+    {/* First Number */}
+    <a 
+      href="tel:+919700354747" 
+      className="hover:text-[#A1C948] transition-colors"
+    >
+      +91 9700354747
+    </a>
+    
+    <span className="mx-1">/</span>
+    
+    {/* Second Number */}
+    <a 
+      href="tel:+919963573822" 
+      className="hover:text-[#A1C948] transition-colors"
+    >
+      9963573822
+    </a>
+  </div>
+</li>
+
+
             <li className="flex gap-3 items-center">
   <Globe size={18} className="text-[#A1C948] shrink-0" /> 
   <a 
@@ -121,25 +150,10 @@ const Footer = () => {
         </div>
 
         {/* Tier 3: Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 uppercase tracking-widest">
+        <div className="pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500 uppercase tracking-widest">
           <p>© 2026 Sri Sai Priya Physiotherapy . All Rights Reserved.</p>
 
-           <div>
-            {/* <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-6">Follow Us</h4> */}
-           <div className="flex flex-wrap gap-3">
-  {socialLinks.map((social, i) => (
-    <a
-      key={i}
-      href={social.url}
-      target="_blank"             // Opens in a new tab
-      rel="noopener noreferrer"   // Security best practice
-      className={`bg-gray-50 p-3 rounded-xl transition-all duration-300 hover:-translate-y-1 shadow-sm flex items-center justify-center ${social.hoverColor}`}
-    >
-      <social.Icon size={18} />
-    </a>
-  ))}
-</div>
-          </div>
+         
           <div className="flex gap-8">
             <Link to="" className="hover:text-white">Privacy Policy</Link>
             <Link to="" className="hover:text-white">Terms of Service</Link>

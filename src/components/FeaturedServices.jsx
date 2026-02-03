@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 const FeaturedServices = () => {
   // Show only the first 3 services on the home page
-  const limitedServices = allServices.slice(0, 3);
+  const limitedServices = allServices.slice(0, 4);
 
   return (
     <section className="py-24 bg-white overflow-hidden">
@@ -27,7 +27,7 @@ const FeaturedServices = () => {
         </div>
 
         {/* GRID SECTION WITH STAGGERED SLIDE ANIMATION */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {limitedServices.map((service, index) => (
             <div 
               key={service.id} 

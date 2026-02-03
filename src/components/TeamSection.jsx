@@ -13,7 +13,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <section className="relative bg-[#F5F3F0] py-24 font-poppins overflow-hidden">
+    <section className="relative bg-[#F5F3F0] py-20 font-poppins overflow-hidden">
       <div className="max-w-7xl mx-auto px-8">
         
         {/* Header Section */}

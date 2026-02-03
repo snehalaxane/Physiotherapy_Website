@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Mail, Clock, MessageCircle, ChevronDown, CheckCircle, ShieldCheck, Send } from 'lucide-react';
 import emailjs from "@emailjs/browser";
+import {allServices} from "../pages/ServiceData";
+import {TherapyList} from "../pages/TherapyData";
+import {allSymptoms} from "../pages/SymptomData"
 
 const ContactPhysioPage = () => {
   const [formData, setFormData] = useState({
-    firstName: '', lastName: '', email: '', phone: '', clinic: 'Neck Pain', concern: '', message: ''
+   firstName: '', lastName: '', email: '', phone: '', 
+        service: '', therapy: '', symptom: '', message: ''
   });
 
   const [otp, setOtp] = useState("");
@@ -13,6 +17,9 @@ const ContactPhysioPage = () => {
   const [otpSent, setOtpSent] = useState(false);
   const [emailVerified, setEmailVerified] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showSymptomList, setShowSymptomList] = useState(false);
+  const [showTherapyList, setShowTherapyList] = useState(false);
+  const [showServiceList, setShowServiceList] = useState(false);
 
   const sendOtp = async () => {
     if (!formData.email || !formData.email.includes('@')) {
@@ -52,8 +59,9 @@ const ContactPhysioPage = () => {
         last_name: formData.lastName,
         email: formData.email,
         phone: formData.phone,
-        issue: formData.clinic,
-        concern: formData.concern,
+       service: formData.service, // Changed to match new state
+        therapy: formData.therapy, // Added
+        symptom: formData.symptom, // Added
         message: formData.message,
       }, "y2hSY0vYSA1ngrCLQ");
       alert("Appointment request sent successfully!");
@@ -89,7 +97,8 @@ const ContactPhysioPage = () => {
       </section>
 
       {/* 2. Main Content Area */}
-      <main className="max-w-7xl mx-auto px-6 -mt-24 pb-12 relative z-20">
+     {/* Changed pb-12 to pb-60 */}
+<main className="max-w-7xl mx-auto px-6 -mt-24 pb-64 relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           
           {/* Sidebar */}
@@ -218,35 +227,187 @@ const ContactPhysioPage = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Phone</label>
-                  <input
-                    type="tel"
-                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 focus:bg-white focus:ring-2 focus:ring-[#095884] outline-none transition-all"
-                    placeholder="10-digit number"
-                    maxLength={10}
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, "") })}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Health Concern</label>
-                  <div className="relative">
-                    <select className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 focus:bg-white outline-none appearance-none cursor-pointer">
-                      <option>Post-Op Rehab</option>
-                      <option>Sports Injury</option>
-                      <option>Chronic Back Pain</option>
-                      <option>Neurological Physio</option>
-                    </select>
-                    <ChevronDown size={16} className="absolute right-5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" />
-                  </div>
-                </div>
+              <div className="space-y-2">
+  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Phone</label>
+  <input
+    type="tel"
+    className={`w-full bg-slate-50 border rounded-2xl px-5 py-4 focus:bg-white focus:ring-2 outline-none transition-all ${
+      formData.phone.length > 0 && formData.phone.length < 10 
+      ? 'border-orange-300 ring-orange-100' 
+      : 'border-slate-100 focus:ring-[#095884]'
+    }`}
+    placeholder="10-digit number"
+    maxLength={10}
+    value={formData.phone}
+    onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, "") })}
+  />
+  {/* Show warning if user started typing but hasn't reached 10 */}
+  {formData.phone.length > 0 && formData.phone.length < 10 && (
+    <p className="text-[10px] text-orange-500 ml-1 font-bold">Must be exactly 10 digits</p>
+  )}
+</div>
+
+           <div className="space-y-2 relative">
+  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Service</label>
+  
+  {/* The Custom Select Box */}
+  <div 
+    onClick={() => setShowServiceList(!showServiceList)}
+    className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 flex justify-between items-center cursor-pointer hover:bg-white transition-all"
+  >
+    <span className={formData.service ? "text-slate-900" : "text-slate-400"}>
+      {formData.service || "Select Service"}
+    </span>
+    <ChevronDown 
+      size={16} 
+      className={`text-slate-400 transition-transform duration-300 ${showServiceList ? 'rotate-180' : ''}`} 
+    />
+  </div>
+
+  {/* The Dropdown Menu */}
+  <AnimatePresence>
+    {showServiceList && (
+      <>
+        {/* Click outside to close */}
+        <div className="fixed inset-0 z-[90]" onClick={() => setShowServiceList(false)} />
+        
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className="absolute z-[100] w-full mt-2 bg-white border border-slate-100 rounded-2xl shadow-2xl max-h-60 overflow-y-auto"
+        >
+          {allServices.map((s) => (
+            <div 
+              key={s.id}
+              className="px-5 py-3 hover:bg-blue-50 cursor-pointer text-slate-700 transition-colors border-b border-slate-50 last:border-none"
+              onClick={() => {
+                setFormData({ ...formData, service: s.title });
+                setShowServiceList(false);
+              }}
+            >
+              {s.title}
+            </div>
+          ))}
+        </motion.div>
+      </>
+    )}
+  </AnimatePresence>
+</div>
+
+
+
+                 
+
+
+
+               <div className="space-y-2 relative">
+  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Therapy</label>
+  
+  {/* The Custom Select Box */}
+  <div 
+    onClick={() => setShowTherapyList(!showTherapyList)}
+    className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 flex justify-between items-center cursor-pointer hover:bg-white transition-all"
+  >
+    <span className={formData.therapy ? "text-slate-900" : "text-slate-400"}>
+      {formData.therapy || "Select Therapy"}
+    </span>
+    <ChevronDown 
+      size={16} 
+      className={`text-slate-400 transition-transform duration-300 ${showTherapyList ? 'rotate-180' : ''}`} 
+    />
+  </div>
+
+  {/* The Dropdown Menu */}
+  <AnimatePresence>
+    {showTherapyList && (
+      <>
+        {/* Invisible backdrop to close dropdown when clicking outside */}
+        <div 
+          className="fixed inset-0 z-[90]" 
+          onClick={() => setShowTherapyList(false)} 
+        />
+        
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className="absolute z-[100] w-full mt-2 bg-white border border-slate-100 rounded-2xl shadow-2xl max-h-60 overflow-y-auto"
+        >
+          {TherapyList.map((t) => (
+            <div 
+              key={t.id}
+              className="px-5 py-3 hover:bg-blue-50 cursor-pointer text-slate-700 transition-colors border-b border-slate-50 last:border-none"
+              onClick={() => {
+                setFormData({ ...formData, therapy: t.title });
+                setShowTherapyList(false);
+              }}
+            >
+              {t.title}
+            </div>
+          ))}
+        </motion.div>
+      </>
+    )}
+  </AnimatePresence>
+</div>
+
+                  <div className="space-y-2 relative">
+  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Symptom</label>
+  
+  {/* The "Box" */}
+  <div 
+    onClick={() => setShowSymptomList(!showSymptomList)}
+    className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 flex justify-between items-center cursor-pointer hover:bg-white transition-all"
+  >
+    <span className={formData.symptom ? "text-slate-900" : "text-slate-400"}>
+      {formData.symptom || "Select Symptom"}
+    </span>
+    <ChevronDown size={16} className={`text-slate-400 transition-transform ${showSymptomList ? 'rotate-180' : ''}`} />
+  </div>
+
+  {/* The Actual List */}
+  <AnimatePresence>
+    {showSymptomList && (
+      <motion.div 
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        className="absolute z-[100] w-full mt-2 bg-white border border-slate-100 rounded-2xl shadow-2xl max-h-60 overflow-y-auto"
+      >
+        {Object.entries(allSymptoms).map(([key, details]) => (
+          <div 
+            key={key}
+            className="px-5 py-3 hover:bg-blue-50 cursor-pointer text-slate-700 transition-colors"
+            onClick={() => {
+              setFormData({ ...formData, symptom: details.title });
+              setShowSymptomList(false);
+            }}
+          >
+            {details.title}
+          </div>
+        ))}
+      </motion.div>
+    )}
+  </AnimatePresence>
+</div>
+
               </div>
 
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Describe Symptoms</label>
-                <textarea rows="3" className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 focus:bg-white focus:ring-2 focus:ring-[#095884] outline-none transition-all resize-none" placeholder="Briefly describe what you're experiencing..."></textarea>
-              </div>
+             <div className="space-y-2">
+  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">
+    Describe Symptoms
+  </label>
+  <textarea 
+    rows="3" 
+    // 1. Link the text to your state
+    value={formData.message} 
+    // 2. Update the state as the user types
+    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+    className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 focus:bg-white focus:ring-2 focus:ring-[#095884] outline-none transition-all resize-none" 
+    placeholder="Briefly describe what you're experiencing..."
+  ></textarea>
+</div>
 
               <button
                 type="button"

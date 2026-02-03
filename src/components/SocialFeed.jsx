@@ -2,13 +2,13 @@
 import img2 from "../assets/Socialgallery/Img2.jpg"
 import img3 from "../assets/Socialgallery/Img3.jpg"
 import img4 from "../assets/Socialgallery/Img4.jpg"
-import img5 from "../assets/Socialgallery/Img5.jpg"
+// import img5 from "../assets/Socialgallery/Img5.jpg"
 
 const socialData = [
 { id: 2, image: img2, title: "Community Outreach", category: "Social" },
 { id: 3, image: img3, title: "Community Outreach", category: "Social" },
 { id: 4, image: img4, title: "Community Outreach", category: "Social" },
-{ id: 5, image: img5, title: "Community Outreach", category: "Social" },
+// { id: 5, image: img5, title: "Community Outreach", category: "Social" },
   // Add more social items here
 ];
 
