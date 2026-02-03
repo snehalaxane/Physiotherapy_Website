@@ -2,12 +2,14 @@ import React from 'react';
 import doctorImg1 from "../assets/doctor1.jpg";
 import doctorImg2 from "../assets/doctor2.jpg";
 import doctorImg3 from "../assets/doctor3.jpg";
+import doctorImg4 from "../assets/doctor4.jpg";
 
 const TeamSection = () => {
   const teamMembers = [
     { name: "Dr. Madhavi", role: "Specialist In Manual Therapy", image: doctorImg2, delay: '0s' },
     { name: "Dr. N. Kishore Kumar", role: "Orthopedic Trauma & Joint Replacement Surgeon", image: doctorImg3, delay: '1s' },
-    { name: "Dr. Priyanka.B", role: "Female specialist", image: doctorImg1, delay: '2s' }
+    { name: "Dr. Priyanka.B", role: "Female specialist", image: doctorImg1, delay: '2s' },
+    {name: "Dr. Srinivasalu Bodla", role: "Consultant Orthopedic Surgeon", image:doctorImg4 , delay: '3s'}
   ];
 
   return (
@@ -25,7 +27,7 @@ const TeamSection = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {teamMembers.map((member, index) => (
             <div 
               key={index} 

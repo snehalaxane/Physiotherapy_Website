@@ -64,7 +64,9 @@ function Navbar() {
             <NavLink to="/" className={navLinkStyle}>
               {({ isActive }) => (
                 <>
+                 <div className="pb-2">
                   <NavItem label="Home" Icon={Home} isActive={isActive} />
+                  </div>
                   <GradientUnderline isActive={isActive} />
                 </>
               )}
@@ -217,7 +219,7 @@ function Navbar() {
     {/* 2. Social Feeds Link (Redirects to internal project page) */}
     <li>
       <NavLink 
-        to="/social-feeds" 
+        to="/gallery" 
         className="flex items-center gap-4 px-4 py-3 text-sm hover:bg-lime-50 rounded-xl transition-all group/item mt-1"
         onClick={() => setInfoDropdownOpen(false)}
       >
