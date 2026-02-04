@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import img2 from "../assets/Socialgallery/Img2.jpg"
 import img4 from "../assets/Socialgallery/Img4.jpg"
 import img10 from "../assets/Socialgallery/Img10.jpg";
-import img11 from "../assets/Socialgallery/img11.jpg";
+// import img11 from "../assets/Socialgallery/img11.jpg";
 import img12 from "../assets/Socialgallery/Img12.jpg";
 import img13 from "../assets/Socialgallery/Img13.jpg";
 import img14 from "../assets/Socialgallery/Img14.jpg";
@@ -46,7 +46,7 @@ const socialData = [
 { id: 2, image: img2, title: "Community Outreach", category: "Social" },
 { id: 4, image: img4, title: "Community Outreach", category: "Social" },
 { id: 10, image: img10, title: "Community Outreach", category: "Social" },
-{ id: 11, image: img11, title: "Community Outreach", category: "Social" },
+// { id: 11, image: img11, title: "Community Outreach", category: "Social" },
 { id: 12, image: img12, title: "Community Outreach", category: "Social" },
 { id: 13, image: img13, title: "Community Outreach", category: "Social" },
 { id: 14, image: img14, title: "Community Outreach", category: "Social" },
