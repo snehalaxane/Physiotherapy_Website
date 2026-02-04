@@ -18,14 +18,14 @@ const Symptoms = () => {
   return (
     <div className="bg-[#F5F3F0] min-h-screen font-poppins">
       {/* Header Section */}
-      <section className="bg-[#095884] py-20 px-8 text-center text-white overflow-hidden relative">
+      <section className="bg-[#095884] py-6 px-6 text-center text-white overflow-hidden relative">
         {/* Subtle background decoration */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
         
         <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-reveal relative z-10">
           Symptoms We Treat
         </h1>
-        <p className="text-blue-100 max-w-2xl mx-auto text-lg mb-10 animate-reveal relative z-10" style={{ animationDelay: '0.2s' }}>
+        <p className="text-blue-100 max-w-2xl mx-auto text-lg mb-2 animate-reveal relative z-10" style={{ animationDelay: '0.2s' }}>
           Identify your symptoms and discover how specialized physiotherapy can help you regain mobility and live pain-free.
         </p>
 

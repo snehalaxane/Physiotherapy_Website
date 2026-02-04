@@ -3,6 +3,10 @@ import { Quote, Star } from 'lucide-react';
 import Patient1 from "../assets/Patient1.jpg"
 import Patient2 from "../assets/Patient2.jpg";
 import Patient3 from "../assets/Patient3.jpg"
+import  Patient4 from "../assets/Patient4.jpg"
+import  Patient5 from "../assets/Patient5.jpg"
+import  Patient6 from "../assets/Patient6.jpg"
+import  Patient7 from "../assets/Patient7.jpg"
 
 const RecoveryStories = () => {
   const stories = [
@@ -34,6 +38,38 @@ const RecoveryStories = () => {
       image: Patient3,
       rating: 5
     },
+
+     {
+      name: "chikoti santhosh kumar",
+      condition: "Ligament Issue",
+      story: "My son got ankle twisted and had ligament issue, on reaching to Dr.Madhu sir, he started to walk without any support after two days. Clinic ambiance and atmosphere is very nice. Dr.Madhu and his team (Teja Sri) is very polite and the way they treat is extraordinary.",
+       image: Patient4,
+      rating: 5
+    },
+
+     {
+      name: "Anudeep Ananda",
+      condition: "Back Pain",
+      story: "My name is narshimha ..I have low back pain..I met Dr.Madhu Yadav clinic ..Dr told me don't take tension it normal machanical low back pain.. don't worry..Dr treated me .. present my pain is..cure..tq s to Sri Sai Priya physiotherapy clinic..,🙏🙏🙏 …",
+       image: Patient5,
+      rating: 5
+    },
+
+     {
+      name: "Naveen Kumar",
+      condition: "Pain In Left Hand",
+      story: "Great service by Dr Madhu 😊👍🏻. I had an extreme pain in my left hand ( wasn’t able to move my hand), but took the physio treatment and now, I am feeling way better than before. Thank you so much for your treatment equipment are good in condition, Nice staff & punctual 😊",
+      image: Patient6,
+      rating: 5
+    },
+
+     {
+      name: "Gowri Priya",
+      condition: "Pain In Left Hand",
+      story: "Good service, Advance equipments are available, Approaching with patients politely Over all good treatment they are giving to their patients. Tq sai Priya staff and doctor.",
+      image: Patient7,
+      rating: 5
+    },
   ];
 
   // We double the array to create a seamless infinite loop
@@ -50,7 +86,7 @@ const RecoveryStories = () => {
               Our Stories of <span className="text-[#A1C948]">Remarkable</span> Recovery
             </h2>
           </div>
-          <p className="text-gray-900 font-poppins max-w-sm">
+          <p className="text-gray-900 font-poppins font-bold max-w-sm">
             Nothing makes us happier than seeing our patients return to the activities they love.
           </p>
         </div>
@@ -85,8 +121,8 @@ const RecoveryStories = () => {
                   className="w-12 h-12 rounded-full object-cover ring-2 ring-teal-50" 
                 />
                 <div>
-                  <h4 className="font-bold text-[#095884] font-poppins text-sm">{item.name}</h4>
-                  <span className="text-[10px] font-bold text-[#A1C948] uppercase tracking-tighter bg-teal-50 px-2 py-0.5 rounded">
+                  <h4 className="font-bold text-[#095884] font-poppins text-m">{item.name}</h4>
+                  <span className="text-[12px]  text-[#A1C948] uppercase tracking-tighter px-2 py-0.5 rounded">
                     {item.condition}
                   </span>
                 </div>

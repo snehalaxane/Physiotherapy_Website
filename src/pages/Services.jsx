@@ -8,7 +8,7 @@ const Services = () => {
     <div className="bg-[#FDFCFB] py-24">
       <div className="max-w-[1400px] mx-auto px-6">
         
-        {/* Header Section - Centered */}
+       
       {/* Header Section */}
 <div className="grid place-items-center w-full mb-20">
   <div className="max-w-4xl w-full text-center">

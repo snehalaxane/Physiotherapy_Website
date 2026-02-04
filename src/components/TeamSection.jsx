@@ -6,10 +6,10 @@ import doctorImg4 from "../assets/doctor4.jpg";
 
 const TeamSection = () => {
   const teamMembers = [
-    { name: "Dr. Madhavi", role: "Specialist In Manual Therapy", image: doctorImg2, delay: '0s' },
-    { name: "Dr. N. Kishore Kumar", role: "Orthopedic Trauma & Joint Replacement Surgeon", image: doctorImg3, delay: '1s' },
-    { name: "Dr. Priyanka.B", role: "Female specialist", image: doctorImg1, delay: '2s' },
-    {name: "Dr. Srinivasalu Bodla", role: "Consultant Orthopedic Surgeon", image:doctorImg4 , delay: '3s'}
+    { name: "Dr. Madhavi", role: "Specialist In Manual Therapy", degree:"BPT, MIAP", image: doctorImg2, delay: '0s' },
+    { name: "Dr. N. Kishore Kumar", role: "Assistant Professor GMC/GGH / Orthopedic Trauma & Joint Replacement Surgeon", degree:"MBBS, MS(Ortho)", image: doctorImg3, delay: '1s' },
+    { name: "Dr. Priyanka.B", role: "Female specialist", degree: "BPT, MIAP, MTC",image: doctorImg1, delay: '2s' },
+    {name: "Dr. Srinivasalu Bodla", role: "Consultant Orthopedic Surgeon", degree:"MBBS, D.Ortho, MCh(Ortho)", image:doctorImg4 , delay: '3s'}
   ];
 
   return (
@@ -50,6 +50,9 @@ const TeamSection = () => {
                 </h3>
                 <p className="text-sm text-[#A1C948] font-bold mt-1 uppercase tracking-wider">
                   {member.role}
+                </p>
+                <p className="text-sm text-[#095884] font-bold mt-1 uppercase tracking-wider">
+                  {member.degree}
                 </p>
               </div>
             </div>

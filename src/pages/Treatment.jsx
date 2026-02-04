@@ -13,7 +13,7 @@ const TherapyPage = () => {
   return (
    <div className="bg-[#FDFCFB] min-h-screen">
       {/* Search Header */}
-      <section className="bg-blue-950 py-24 px-8 overflow-hidden relative">
+      <section className="bg-blue-950 py-10 px-8 overflow-hidden relative">
         {/* Animated Background Element */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-[100px] -mr-48 -mt-48" />
         
@@ -21,7 +21,7 @@ const TherapyPage = () => {
           <span className="text-[#A1C948] font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block animate-reveal">
             Advanced Rehabilitation
           </span>
-          <h1 className="text-4xl md:text-6xl font-poppins font-bold text-white mb-8 animate-reveal">
+          <h1 className="text-4xl md:text-6xl font-poppins font-bold text-white mb-1 animate-reveal">
             Our Treatment <span className="text-[#A1C948]">Modalities</span>
           </h1>
           

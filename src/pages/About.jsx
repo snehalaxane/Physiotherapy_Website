@@ -3,6 +3,7 @@ import { Target, Heart, Award, CheckCircle2, ArrowRight } from 'lucide-react';
 import TeamSection from '../components/TeamSection';
 import WhatWeDo from "../components/WhatWeDo";
 import { NavLink } from "react-router-dom";
+import madhudoc from "../assets/madhudoc.jpg"
 
 const AboutUs = () => {
   return (
@@ -18,7 +19,7 @@ const AboutUs = () => {
           
           <div className="relative group">
             <img 
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=800" 
+              src={madhudoc}
               alt="Clinic Interior" 
               className="rounded-[2.5rem] shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] relative z-10"
             />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, Activity } from 'lucide-react';
+import whatwedo from "../assets/whatwedo.jpg"
 
 const PhysiotherapySection = () => {
   const features = [
@@ -91,9 +92,9 @@ const PhysiotherapySection = () => {
             {/* The Main Image Container */}
             <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
               <img 
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" 
+                src={whatwedo} 
                 alt="Therapy Session" 
-                className="w-full aspect-[4/5] object-cover"
+                className="w-full aspect-[4/4] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#095884]/40 to-transparent" />
             </div>

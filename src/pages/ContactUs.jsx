@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState ,forwardRef} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Phone, Mail, Clock, MessageCircle, ChevronDown, CheckCircle, ShieldCheck, Send } from 'lucide-react';
+import { Phone, Mail, Clock, MessageCircle, ChevronDown, CheckCircle, ShieldCheck, Send ,CalendarIcon  } from 'lucide-react';
 import emailjs from "@emailjs/browser";
 import {allServices} from "../pages/ServiceData";
 import {TherapyList} from "../pages/TherapyData";
 import {allSymptoms} from "../pages/SymptomData"
+import DatePicker from "react-datepicker"; // 1. Import DatePicker
+import "react-datepicker/dist/react-datepicker.css"; // 2. Import CSS
 
 const ContactPhysioPage = () => {
   const [formData, setFormData] = useState({
-   firstName: '', lastName: '', email: '', phone: '', 
+   Name: '',  email: '', phone: '', 
         service: '', therapy: '', symptom: '', message: ''
   });
 
@@ -55,8 +57,8 @@ const ContactPhysioPage = () => {
     setLoading(true);
     try {
       await emailjs.send("service_396iasn", "template_jpca4e8", {
-        first_name: formData.firstName,
-        last_name: formData.lastName,
+        name: formData.Name,
+       
         email: formData.email,
         phone: formData.phone,
        service: formData.service, // Changed to match new state
@@ -72,11 +74,36 @@ const ContactPhysioPage = () => {
     }
   };
 
+  const CustomDateInput = forwardRef(({ value, onClick }, ref) => (
+    <div 
+      onClick={onClick} 
+      ref={ref}
+      className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 flex justify-between items-center cursor-pointer hover:bg-white transition-all"
+    >
+      <span className="text-slate-900">{value || "Select Date"}</span>
+      <CalendarIcon size={16} className="text-slate-400" />
+    </div>
+  ));
+
   return (
     <div className="min-h-screen bg-[#F8FAFB] font-poppins text-slate-900">
+      {/* 5. Add custom CSS to style the calendar popup to match your theme */}
+      <style>{`
+        .react-datepicker-wrapper { width: 100%; }
+        .react-datepicker { 
+          font-family: 'Poppins', sans-serif;
+          border-radius: 1.5rem;
+          border: 1px solid #f1f5f9;
+          shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+          overflow: hidden;
+        }
+        .react-datepicker__header { background-color: #095884; border: none; }
+        .react-datepicker__current-month, .react-datepicker__day-name { color: white; }
+        .react-datepicker__day--selected { background-color: #A1C948 !important; color: #063e5d !important; font-weight: bold; }
+      `}</style>
       
       {/* 1. Hero Section */}
-      <section className="bg-gradient-to-br from-[#095884] to-[#063e5d] pt-24 pb-40 px-6 text-center text-white relative overflow-hidden">
+      <section className="bg-gradient-to-br from-[#095884] to-[#063e5d] pt-20 pb-40 px-6 text-center text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl" />
         </div>
@@ -163,14 +190,23 @@ const ContactPhysioPage = () => {
             </div>
             
             <form className="space-y-6">
+              {/* Name Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">First Name</label>
-                  <input type="text" className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 focus:bg-white focus:ring-2 focus:ring-[#095884] outline-none transition-all" placeholder="Enter First Name" />
+                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Name</label>
+                  <input type="text" className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 outline-none" placeholder="Enter your name" />
                 </div>
+
+                {/* CALENDAR ADDED HERE */}
                 <div className="space-y-2">
-                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Last Name</label>
-                  <input type="text" className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 focus:bg-white focus:ring-2 focus:ring-[#095884] outline-none transition-all" placeholder="Enter Last Name" />
+                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Appointment Date</label>
+                  <DatePicker
+                    selected={formData.appointmentDate}
+                    onChange={(date) => setFormData({ ...formData, appointmentDate: date })}
+                    dateFormat="dd/MM/yyyy"
+                    minDate={new Date()}
+                    customInput={<CustomDateInput />}
+                  />
                 </div>
               </div>
 
@@ -294,14 +330,7 @@ const ContactPhysioPage = () => {
     )}
   </AnimatePresence>
 </div>
-
-
-
-                 
-
-
-
-               <div className="space-y-2 relative">
+<div className="space-y-2 relative">
   <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Therapy</label>
   
   {/* The Custom Select Box */}
@@ -352,10 +381,9 @@ const ContactPhysioPage = () => {
   </AnimatePresence>
 </div>
 
-                  <div className="space-y-2 relative">
+       <div className="space-y-2 relative">
   <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Symptom</label>
   
-  {/* The "Box" */}
   <div 
     onClick={() => setShowSymptomList(!showSymptomList)}
     className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-5 py-4 flex justify-between items-center cursor-pointer hover:bg-white transition-all"
@@ -366,28 +394,35 @@ const ContactPhysioPage = () => {
     <ChevronDown size={16} className={`text-slate-400 transition-transform ${showSymptomList ? 'rotate-180' : ''}`} />
   </div>
 
-  {/* The Actual List */}
   <AnimatePresence>
     {showSymptomList && (
-      <motion.div 
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        className="absolute z-[100] w-full mt-2 bg-white border border-slate-100 rounded-2xl shadow-2xl max-h-60 overflow-y-auto"
-      >
-        {Object.entries(allSymptoms).map(([key, details]) => (
-          <div 
-            key={key}
-            className="px-5 py-3 hover:bg-blue-50 cursor-pointer text-slate-700 transition-colors"
-            onClick={() => {
-              setFormData({ ...formData, symptom: details.title });
-              setShowSymptomList(false);
-            }}
-          >
-            {details.title}
-          </div>
-        ))}
-      </motion.div>
+      <>
+        {/* ADD THIS BACKDROP LAYER BELOW */}
+        <div 
+          className="fixed inset-0 z-[90]" 
+          onClick={() => setShowSymptomList(false)} 
+        />
+        
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          className="absolute z-[100] w-full mt-2 bg-white border border-slate-100 rounded-2xl shadow-2xl max-h-60 overflow-y-auto"
+        >
+          {Object.entries(allSymptoms).map(([key, details]) => (
+            <div 
+              key={key}
+              className="px-5 py-3 hover:bg-blue-50 cursor-pointer text-slate-700 transition-colors border-b border-slate-50 last:border-none"
+              onClick={() => {
+                setFormData({ ...formData, symptom: details.title });
+                setShowSymptomList(false);
+              }}
+            >
+              {details.title}
+            </div>
+          ))}
+        </motion.div>
+      </>
     )}
   </AnimatePresence>
 </div>
@@ -396,7 +431,7 @@ const ContactPhysioPage = () => {
 
              <div className="space-y-2">
   <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">
-    Describe Symptoms
+    Describe More
   </label>
   <textarea 
     rows="3" 

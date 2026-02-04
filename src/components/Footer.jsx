@@ -60,7 +60,7 @@ const Footer = () => {
           <div className="col-span-2 lg:col-span-1">
             <h4 className="font-bold text-[#A1C948] uppercase tracking-wider text-sm mb-6">Contact Us</h4>
           <ul className="space-y-4 text-gray-400 text-sm">
-              <li className="flex items-start gap-3"><MapPin size={18} className="text-[#A1C948] shrink-0 mt-1"/>above Sathya Hospital jetta Mallaiah complex warangal-Bhoopalpatam highway, NH163, Uppal, Hyderabad, Telangana 500039</li>
+              <li className="flex items-start gap-3"><MapPin size={18} className="text-[#A1C948] shrink-0 mt-1"/>Above Sathya Hospital, Near Gandhi Statue, Main Road, Uppal, Hyderabad, Telangana 500039</li>
              
              
             <li className="flex items-center gap-3">
@@ -69,7 +69,7 @@ const Footer = () => {
     <Phone size={18} className="text-[#A1C948] shrink-0" />
   </a>
 
-  <div className="flex flex-wrap gap-1">
+  <div className="flex flex-wrap gap-1 text-[#A1C948]">
     {/* First Number */}
     <a 
       href="tel:+919700354747" 

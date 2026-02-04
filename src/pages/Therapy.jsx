@@ -7,7 +7,7 @@ const TherapyPage = () => {
   return (
     <div className="bg-[#FDFCFB] min-h-screen overflow-x-hidden">
       {/* Hero Header */}
-      <section className="bg-blue-950 py-24 px-8 relative overflow-hidden">
+      <section className="bg-blue-950 py-9 px-8 relative overflow-hidden">
         {/* Decorative elements for a medical-tech feel */}
         <div className="absolute inset-0 opacity-20">
            <div className="absolute top-0 left-0 w-96 h-96 bg-[#A1C948] rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
@@ -15,12 +15,12 @@ const TherapyPage = () => {
         </div>
 
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full mb-6 border border-white/10 animate-reveal">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-md rounded-full mb-4 border border-white/10 animate-reveal">
             <Zap size={14} className="text-[#A1C948]" />
             <span className="text-white text-[10px] font-bold uppercase tracking-widest">Advanced Equipment</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-poppins font-bold text-white mb-6 animate-reveal">
+          <h1 className="text-4xl md:text-6xl font-poppins font-bold text-white mb-4 animate-reveal">
             Our <span className="text-[#A1C948]">Therapies</span>
           </h1>
           <p className="text-blue-100 max-w-2xl mx-auto opacity-80 text-lg font-light animate-reveal" style={{ animationDelay: '0.2s' }}>

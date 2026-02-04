@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { User, Phone, Mail, MapPin, MessageSquare, ClipboardList, CheckCircle } from 'lucide-react';
+import { User, Phone, Mail, Calendar as CalendarIcon, MessageSquare, CheckCircle } from 'lucide-react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const AppointmentForm = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +11,7 @@ const AppointmentForm = () => {
     email: '',
     clinic: '',
     concern: '',
+    appointmentDate: new Date(), // THIS WAS MISSING
     additionalInfo: '',
     agreed: false
   });
@@ -21,8 +24,43 @@ const AppointmentForm = () => {
     }));
   };
 
+  // 3. Special handler for the DatePicker
+  const handleDateChange = (date) => {
+    setFormData(prev => ({ ...prev, appointmentDate: date }));
+  };
+
   return (
-    <div className="bg-gradient-to-br from-indigo-200 via-slate-500 to-black flex items-center justify-center py-24">
+  <div className="min-h-screen bg-[#0f172a] flex items-center justify-center py-24 px-4">
+      {/* 1. Global CSS for the DatePicker styling */}
+      <style>{`
+        .react-datepicker-wrapper { width: 100%; }
+        .react-datepicker__input-container input {
+          width: 100%;
+          background-color: rgba(30, 41, 59, 0.5);
+          border: 1px solid #334155;
+          border-radius: 0.75rem;
+          padding: 0.75rem 1rem 0.75rem 2.5rem;
+          color: white;
+          outline: none;
+          transition: all 0.2s;
+        }
+        .react-datepicker__input-container input:focus {
+          border-color: #6366f1;
+          box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+        }
+        /* Style for the popup calendar itself */
+        .react-datepicker {
+          background-color: #1e293b;
+          border: 1px solid #334155;
+          color: white;
+        }
+        .react-datepicker__header { background-color: #0f172a; border-bottom: 1px solid #334155; }
+        .react-datepicker__current-month, .react-datepicker__day-name, .react-datepicker__day { color: white; }
+        .react-datepicker__day:hover { background-color: #6366f1; }
+        .react-datepicker__day--selected { background-color: #6366f1 !important; }
+      `}</style>
+
+
       {/* Main Card Container */}
       <div className="w-full max-w-5xl bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
         
@@ -55,6 +93,22 @@ const AppointmentForm = () => {
                   type="text" 
                   className="w-full bg-slate-800/50 border border-slate-700 rounded-xl py-3 pl-10 pr-4 text-white focus:ring-2 focus:ring-indigo-500 outline-none transition-all"
                   placeholder="John"
+                />
+              </div>
+            </div>
+
+            {/* Appointment Date (The New Calendar Field) */}
+           {/* Date Picker (The Calendar) */}
+           <div className="space-y-2">
+              <label className="text-xs font-bold uppercase tracking-wider text-[#095884]">Appointment Date</label>
+              <div className="relative">
+                <CalendarIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500 z-20 pointer-events-none" />
+                <DatePicker
+                  selected={formData.appointmentDate}
+                  onChange={handleDateChange}
+                  dateFormat="dd/MM/yyyy"
+                  minDate={new Date()}
+                  className="datepicker-input"
                 />
               </div>
             </div>
@@ -150,7 +204,14 @@ const AppointmentForm = () => {
             </button>
           </div>
         </form>
+
+
       </div>
+     {/* 4. Small CSS tweak for the DatePicker width */}
+      <style>{`
+        .react-datepicker-wrapper { width: 100%; }
+        .react-datepicker { font-family: inherit; border-radius: 1rem; border: none; shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+      `}</style>
     </div>
   );
 };
