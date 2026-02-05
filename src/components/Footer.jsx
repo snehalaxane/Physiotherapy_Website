@@ -102,8 +102,25 @@ const Footer = () => {
     srisaipriyaphysiotherapy.com
   </a>
 </li>
+
+ <li className="flex gap-3 items-center whitespace-nowrap">
+  <MapPin size={18} className="text-[#A1C948] shrink-0" /> 
+  <a
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-[#A1C948] transition-colors"
+  >
+    UPPAL | BODUPPAL | CHILKANAGAR | NACHARAM | GHATKESAR
+  </a>
+</li>
+  
+
             </ul>
           </div>
+         
+
+
+        
 
           {/* Col 2: Services */}
         <div className="col-span-4 lg:col-span-3"> {/* Increased col-span to give more room */}
