@@ -103,7 +103,7 @@ const ContactPhysioPage = () => {
       `}</style>
       
       {/* 1. Hero Section */}
-      <section className="bg-gradient-to-br from-[#095884] to-[#063e5d] pt-20 pb-40 px-6 text-center text-white relative overflow-hidden">
+      <section className="bg-gradient-to-br from-[#095884] to-[#063e5d] pt-10 pb-40 px-6 text-center text-white relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute top-10 left-10 w-64 h-64 bg-white rounded-full blur-3xl" />
         </div>
@@ -139,20 +139,62 @@ const ContactPhysioPage = () => {
               
               <div className="space-y-8">
                 {[
-                  { icon: <Phone size={20}/>, label: "Call Support", val: "+91 9700354747 / 9963573822", bg: "bg-blue-50", color: "text-blue-600" },
-                  { icon: <Mail size={20}/>, label: "Email Us", val: "nunetimadhu@gmail.com", bg: "bg-lime-50", color: "text-lime-600" },
-                  { icon: <Clock size={20}/>, label: "Clinic Hours", val: "Mon-Sat: 8AM - 7PM", bg: "bg-orange-50", color: "text-orange-600" }
+                  { 
+    icon: <Phone size={20}/>, 
+    label: "Call Support", 
+    // We provide specific links for the href
+    val: "+91 9700354747 / 9963573822", 
+    links: ["tel:+919700354747", "tel:+919963573822"],
+    bg: "bg-blue-50", 
+    color: "text-blue-600" 
+  },
+                { 
+    icon: <Mail size={20}/>, 
+    label: "Email Us", 
+    val: "nunetimadhu@gmail.com", 
+    links: ["mailto:nunetimadhu@gmail.com"],
+    bg: "bg-lime-50", 
+    color: "text-lime-600" 
+  },
+                  { 
+    icon: <Clock size={20}/>, 
+    label: "Clinic Hours", 
+    val: "Monday - Saturday : 9AM - 9PM Sunday : 9AM - 1PM", 
+    bg: "bg-orange-50", 
+    color: "text-orange-600" 
+  }
                 ].map((item, i) => (
                   <div key={i} className="flex items-start gap-4 group">
-                    <div className={`p-4 ${item.bg} ${item.color} rounded-2xl transition-transform group-hover:scale-110`}>
-                      {item.icon}
-                    </div>
-                    <div>
-                      <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">{item.label}</p>
-                      <p className="text-base font-semibold text-slate-700">{item.val}</p>
-                    </div>
-                  </div>
-                ))}
+    <div className={`p-4 ${item.bg} ${item.color} rounded-2xl transition-transform group-hover:scale-110`}>
+      {item.icon}
+    </div>
+    <div>
+      <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">{item.label}</p>
+      
+      {/* Logic to handle clickable links */}
+      {item.links ? (
+        <div className="flex flex-col">
+          {item.label === "Call Support" ? (
+            <p className="text-base font-semibold text-slate-700">
+              <a href={item.links[0]} className="hover:hover:text-lime-600 hover:underline transition-all">+91 9700354747</a>
+              <span className="mx-1 text-slate-300">/</span>
+              <a href={item.links[1]} className="hover:text-blue-600 hover:underline transition-all">9963573822</a>
+            </p>
+          ) : (
+            <a 
+              href={item.links[0]} 
+              className="text-base font-semibold text-slate-700 hover:text-lime-600 hover:underline transition-all"
+            >
+              {item.val}
+            </a>
+          )}
+        </div>
+      ) : (
+        <p className="text-base font-semibold text-slate-700">{item.val}</p>
+      )}
+    </div>
+  </div>
+))}
               </div>
             </div>
 

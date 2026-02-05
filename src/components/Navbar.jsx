@@ -6,6 +6,8 @@ import { ChevronDown, Menu, X ,Home, Sparkles ,Info,Stethoscope, LayoutGrid ,Act
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileOfferingsOpen, setMobileOfferingsOpen] = useState(false);
+  const [mobileInfoOpen, setMobileInfoOpen] = useState(false);
   const [infoDropdownOpen, setInfoDropdownOpen] = useState(false);
 
   // Reusable Underline Logic
@@ -258,33 +260,45 @@ function Navbar() {
       </div>
 
       {/* Mobile Menu Panel */}
-      <div className={`xl:hidden absolute top-full left-0 w-full bg-white shadow-xl transition-all duration-300 overflow-hidden ${open ? 'max-h-screen border-t' : 'max-h-0'}`}>
+     <div className={`xl:hidden absolute top-full left-0 w-full bg-white shadow-xl transition-all duration-300 overflow-y-auto ${open ? 'max-h-screen border-t' : 'max-h-0'}`}>
         <ul className="px-8 py-6 flex flex-col gap-5 text-gray-700 font-medium">
-          <li><NavLink to="/" onClick={() => setOpen(false)}>Home</NavLink></li>
-        
-             <li><NavLink to="/offerings/services" onClick={() => setOpen(false)}>Services</NavLink></li>
-             <li><NavLink to="/symptoms" onClick={() => setOpen(false)}>Symptoms</NavLink></li>
-       
+          <li><NavLink to="/" onClick={() => setOpen(false)} className="flex items-center gap-3"><Home size={18}/> Home</NavLink></li>
+          <li><NavLink to="/offerings/services" onClick={() => setOpen(false)} className="flex items-center gap-3"><Stethoscope size={18}/> Services</NavLink></li>
+          <li><NavLink to="/symptoms" onClick={() => setOpen(false)} className="flex items-center gap-3"><Activity size={18}/> Symptoms</NavLink></li>
           
-          {/* Mobile Accordion for Offerings */}
-          <li className="flex flex-col gap-3">
-             <span className="text-gray-400 text-xs uppercase tracking-widest">Our Offerings</span>
-             <NavLink to="/offerings/treatments" className="pl-4" onClick={() => setOpen(false)}>Treatments</NavLink>
-             {/* <NavLink to="/offerings/services" className="pl-4" onClick={() => setOpen(false)}>Services</NavLink> */}
-             <NavLink to="/offerings/therapies" className="pl-4" onClick={() => setOpen(false)}>Therapies</NavLink>
+          {/* Mobile Our Offerings */}
+          <li className="flex flex-col">
+            <button 
+              onClick={() => setMobileOfferingsOpen(!mobileOfferingsOpen)}
+              className="flex items-center justify-between w-full text-gray-600"
+            >
+              <div className="flex items-center gap-3"><Pill size={18}/> Our Offerings</div>
+              <ChevronDown size={18} className={`transition-transform ${mobileOfferingsOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div className={`flex flex-col gap-4 pl-10 transition-all duration-300 overflow-hidden ${mobileOfferingsOpen ? 'max-h-40 mt-4' : 'max-h-0'}`}>
+              <NavLink to="/offerings/treatments" onClick={() => setOpen(false)} className="text-sm flex items-center gap-2"><Thermometer size={14}/> Treatments</NavLink>
+              <NavLink to="/offerings/therapies" onClick={() => setOpen(false)} className="text-sm flex items-center gap-2"><HeartPulse size={14}/> Therapies</NavLink>
+            </div>
           </li>
-             <li><NavLink to="/about" onClick={() => setOpen(false)}>About Us</NavLink></li>
 
+          {/* Mobile More Info */}
+          <li className="flex flex-col">
+            <button 
+              onClick={() => setMobileInfoOpen(!mobileInfoOpen)}
+              className="flex items-center justify-between w-full text-gray-600"
+            >
+              <div className="flex items-center gap-3"><Share2 size={18}/> More Info</div>
+              <ChevronDown size={18} className={`transition-transform ${mobileInfoOpen ? 'rotate-180' : ''}`} />
+            </button>
+            <div className={`flex flex-col gap-4 pl-10 transition-all duration-300 overflow-hidden ${mobileInfoOpen ? 'max-h-40 mt-4' : 'max-h-0'}`}>
+              <NavLink to="/about" onClick={() => setOpen(false)} className="text-sm flex items-center gap-2"><Info size={14}/> About Us</NavLink>
+              <NavLink to="/gallery" onClick={() => setOpen(false)} className="text-sm flex items-center gap-2"><LayoutGrid size={14}/> Social Feeds</NavLink>
+            </div>
+          </li>
 
-           
-
-         
-        
-          {/* <li><NavLink to="/patient-education" onClick={() => setOpen(false)}>Patient Education</NavLink></li>
-          <li><NavLink to="/work-with-us" onClick={() => setOpen(false)}>Work With Us</NavLink></li> */}
-          <li className="pt-4">
-            <NavLink to="/contact-us" onClick={() => setOpen(false)} className="block text-center py-3 rounded-xl bg-[#095884] text-white">
-              Book Now
+          <li className="pt-4 pb-10">
+            <NavLink to="/contact-us" onClick={() => setOpen(false)} className="flex justify-center items-center gap-2 py-3 rounded-xl bg-[#095884] text-white font-bold">
+              <Sparkles size={18} /> Book Now
             </NavLink>
           </li>
         </ul>

@@ -38,15 +38,26 @@ const TherapyPage = () => {
               className="animate-flip-card bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-gray-100 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Image with Hover Zoom */}
-              <div className="overflow-hidden h-44 relative">
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              </div>
+             {/* Image with Hover Zoom */}
+<div className={`overflow-hidden h-44 relative grid ${Array.isArray(item.image) && item.image.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+  {Array.isArray(item.image) ? (
+    item.image.map((img, i) => (
+      <img 
+        key={i}
+        src={img} 
+        alt={`${item.title} ${i + 1}`} 
+        className="w-full h-full object-cover border-r border-white last:border-r-0 transition-transform duration-1000 group-hover:scale-110" 
+      />
+    ))
+  ) : (
+    <img 
+      src={item.image} 
+      alt={item.title} 
+      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
+    />
+  )}
+  <div className="absolute inset-0 bg-gradient-to-t from-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+</div>
 
               <div className="p-6 flex flex-col flex-grow">
                 <h3 className="text-lg font-poppins font-bold text-[#095884] mb-3 group-hover:text-[#A1C948] transition-colors leading-snug">
