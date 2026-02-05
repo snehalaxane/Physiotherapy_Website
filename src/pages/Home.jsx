@@ -1,4 +1,4 @@
-import React, { useState ,useEffect} from 'react';
+import React, { useState } from 'react';
 import doctorimg from "../assets/doctorimg.png";
 import { ArrowUpRight, Star, Plus, MessageCircle } from 'lucide-react';
 import TeamSection from '../components/TeamSection';
@@ -7,39 +7,15 @@ import RecoveryStories from '../components/RecoveryStories';
 import FeaturedServices from '../components/FeaturedServices';
 import Therapy from '../pages/Therapy';
 import FaqSection from '../components/FaqSectionTemp';
-import doctor4 from "../assets/doctor4.jpg";
-import doctor3 from "../assets/doctor3.jpg";
-import doctor2 from "../assets/doctor2.jpg";
-import doctor1 from "../assets/doctor1.jpg";
-
 
 const PhysioHero = () => {
-  // 1. Create the array of 5 images
-  const heroSlides = [
-    doctorimg,
-    doctor4,
-    doctor3,
-    doctor1,
-    doctor2,
-   
- 
-  ];
-
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  // 2. Set up the 1-second timer
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % heroSlides.length);
-    }, 1000); // Changes every 1 second
-    return () => clearInterval(timer);
-  }, [heroSlides.length]);
-
   const images = [
-    "https://plus.unsplash.com/premium_photo-1661779394380-e372d6a1f198?q=80&w=400",
-    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=400",
-    "https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?auto=format&fit=crop&q=80&w=400",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCfPXpt8bBDozq-6Eo7PGW08LVgYt9oP-1ew&s",
+    "https://www.anssiwellness.com/wp-content/uploads/2023/10/lower-back-pain2.jpg",
+   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTBrpbhR_vTYiY93H0UeJ15rr4mxrTMEkOw&s",
+   
     "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&q=80&w=400",
+    "https://plus.unsplash.com/premium_photo-1661698068272-987480c4074d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   ];
   const scrollImages = [...images, ...images];
 
@@ -65,7 +41,7 @@ const PhysioHero = () => {
             <div className="pt-8 text-blue-950 font-bold animate-fade-up delay-600 opacity-0">
                <div className="flex items-center justify-center lg:justify-start gap-2 text-4xl md:text-5xl">
                   <span className="bg-[#A1C948] text-white p-2 rounded-full animate-bounce"><Plus /></span>
-                  125+
+                50K+
                </div>
                <p className="text-sm md:text-base text-gray-500 mt-2">Where Healing Begins,<br/> Transformation Follows.</p>
             </div>
@@ -73,26 +49,17 @@ const PhysioHero = () => {
 
           {/* CENTER COLUMN - Floating Doctor Image */}
           <div className="col-span-12 lg:col-span-5 relative flex justify-center py-10 md:py-0">
-          <div className="relative p-2 md:p-4 bg-white shadow-2xl animate-float-hero w-[280px] md:w-[400px] aspect-[4/6] overflow-hidden">
-             {/* Image Loop */}
-              {heroSlides.map((img, index) => (
-                <img
-                  key={index}
-                  src={img}
-                  alt="Physiotherapy"
-                  className={`absolute inset-0 w-full h-full object-cover p-2 md:p-4 transition-all duration-500 ease-in-out ${
-                    index === activeIndex ? "opacity-100 scale-100" : "opacity-0 scale-95"
-                  }`}
-                />
-              ))}
+            <div className="relative p-2 md:p-4 bg-white shadow-2xl animate-float-hero max-w-[280px] md:max-w-md">
+              <img src={doctorimg} alt="Lead Doctor" className="w-full h-auto" />
               
-             {/* <div className="absolute -left-6 md:-left-14 bottom-10 md:bottom-20 bg-[#2B6191] text-white p-3 md:p-4 rounded-sm flex items-center gap-4 shadow-lg min-w-[200px] rotate-[2deg] z-30">
+              <div className="absolute -left-6 md:-left-14 bottom-10 md:bottom-20 bg-[#2B6191] text-white p-3 md:p-4 rounded-sm flex items-center gap-4 shadow-lg min-w-[200px] rotate-[2deg] hover:rotate-0 transition-transform duration-500 cursor-pointer">
                  <div className="w-2 h-2 rounded-full bg-[#A1C948] animate-pulse"></div>
                  <div>
                     <p className="font-bold text-xs md:text-sm">Dr. Madhu</p>
-                    <p className="text-[10px] md:text-xs">MPT, MIAP, MTC, CDNT, CWCT, FOMT<br/>CERTIFIED OSTEOPATH-CHIROPRACTOR (UK)</p>
+                    <p className="text-[10px] md:text-xs opacity-100">MPT, MIAP, MTC, CDNT, CWCT, FOMT<br></br>CERTIFIED OSTEOPATH-CHIROPRACTOR LOCM (UK)</p>
                  </div>
-              </div> */}
+                 {/* <MessageCircle className="ml-auto opacity-80" size={18} /> */}
+              </div>
             </div>
           </div>
 

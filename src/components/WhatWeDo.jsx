@@ -17,7 +17,7 @@ const PhysiotherapySection = () => {
     },
     { 
       id: "03", 
-      title: "Integrated Technology", 
+      title: "Advanced World-Class Technology", 
       desc: "Utilizing modern US FDA-approved equipment for faster healing and better patient outcomes." 
     }
   ];
@@ -109,7 +109,7 @@ const PhysiotherapySection = () => {
                 <CheckCircle size={32} />
               </div>
               <div>
-                <p className="text-3xl font-bold text-[#095884]">14+</p>
+                <p className="text-3xl font-bold text-[#095884]">15+</p>
                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-tighter">Years of Expertise</p>
               </div>
             </motion.div>

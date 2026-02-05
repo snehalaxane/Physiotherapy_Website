@@ -3,13 +3,21 @@ import doctorImg1 from "../assets/doctor1.jpg";
 import doctorImg2 from "../assets/doctor2.jpg";
 import doctorImg3 from "../assets/doctor3.jpg";
 import doctorImg4 from "../assets/doctor4.jpg";
+import doctorImg5 from "../assets/doctor5.jpg";
+ import doctorimg from "../assets/doctorimg.png";
 
 const TeamSection = () => {
   const teamMembers = [
-    { name: "Dr. Madhavi", role: "Specialist In Manual Therapy", degree:"BPT, MIAP", image: doctorImg2, delay: '0s' },
-    { name: "Dr. N. Kishore Kumar", role: "Assistant Professor GMC/GGH / Orthopedic Trauma & Joint Replacement Surgeon", degree:"MBBS, MS(Ortho)", image: doctorImg3, delay: '1s' },
-    { name: "Dr. Priyanka.B", role: "Female specialist", degree: "BPT, MIAP, MTC",image: doctorImg1, delay: '2s' },
-    {name: "Dr. Srinivasalu Bodla", role: "Consultant Orthopedic Surgeon", degree:"MBBS, D.Ortho, MCh(Ortho)", image:doctorImg4 , delay: '3s'}
+    { name: "Dr. Madhu", role: "CERTIFIED OSTEOPATH-CHIROPRACTOR LOCM (UK)", degree:"MPT, MIAP, MTC, CDNT, CWCT, FOMT", image: doctorimg, delay: '0s' },
+    {name: "Dr. Srinivasalu Bodla", role: "Consultant Orthopedic Surgeon", degree:"MBBS, D.Ortho, MCh(Ortho)", image:doctorImg4 , delay: '1s'},
+    { name: "Dr. N. Kishore Kumar", role: "Assistant Professor GMC/GGH / Orthopedic Trauma & Joint Replacement Surgeon", degree:"MBBS, MS(Ortho)", image: doctorImg3, delay: '2s' },
+    { name: "Dr. Priyanka.B", role: "Female specialist", degree: "BPT, MIAP, MTC",image: doctorImg1, delay: '3s' },
+    { name: "Dr.Nikitha Reddy", role: "Consultant Neuro Specialist", degree:"MPT (Neuro)MIAP", image: doctorImg5, delay: '5s' },
+    { name: "Dr. Madhavi", role: "Specialist In Manual Therapy", degree:"BPT, MIAP", image: doctorImg2, delay: '4s' },
+    
+  
+  
+   
   ];
 
   return (
@@ -27,7 +35,7 @@ const TeamSection = () => {
         </div>
 
         {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           {teamMembers.map((member, index) => (
             <div 
               key={index} 

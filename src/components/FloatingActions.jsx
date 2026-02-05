@@ -4,10 +4,29 @@ import { Phone } from 'lucide-react';
 const FloatingActions = () => {
   const phoneNumber = "919700354747";
   const whatsappMessage = encodeURIComponent("Hello! I would like to book a physiotherapy consultation.");
+  const youtubeChannelUrl = "https://www.youtube.com/@dr.madhuyadav48";
 
   return (
     <div className="fixed bottom-6 right-6 flex flex-col gap-4 z-[9999] items-end">
       
+
+      {/* 1. YouTube Button */}
+      <div className="relative flex items-center justify-end group">
+        <span className="mr-3 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white text-[#FF0000] px-4 py-2 rounded-xl shadow-xl text-sm font-bold pointer-events-none border border-gray-100 translate-x-4 group-hover:translate-x-0">
+          Watch on YouTube
+        </span>
+        <a
+          href={youtubeChannelUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-white text-[#FF0000] p-3 md:p-4 rounded-full shadow-lg hover:scale-110 transition-all duration-300 active:scale-95 border border-gray-100"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+      </div>
+
       {/* 1. Instagram Button */}
       <div className="relative flex items-center justify-end group">
         <span className="mr-3 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white text-[#E4405F] px-4 py-2 rounded-xl shadow-xl text-sm font-bold pointer-events-none border border-gray-100 translate-x-4 group-hover:translate-x-0">
