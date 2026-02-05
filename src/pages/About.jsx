@@ -76,19 +76,26 @@ const AboutUs = () => {
 
   <div className="space-y-4 text-gray-700">
     <p className="leading-relaxed">
-    <strong>Established in 2011,</strong>Sri Sai Priya Physiotherapy has been providing expert care for advanced recovery and rehabilitation. We combine Physiotherapy, Osteopathy, and Chiropractic treatments to help patients heal better and move pain-free.
+    <strong>Sri Sai Priya Physiotherapy, was Established in 2011,</strong> with a clear vision: to provide high-quality, result-oriented rehabilitation care using both traditional and advanced therapy techniques. Since then, we have been consistently delivering trusted physiotherapy and manual therapy services to patients across all age groups.
+    </p>
+    <p>
+      Our clinic is led by UK-certified clinicians and follows international standards of assessment and treatment. We specialize in an integrated recovery approach, combining Physiotherapy, Osteopathy, and Chiropractic care to ensure complete and long-help recovery rather than temporary relief.
+    </p>
+    <p>
+      At Sri Sai Priya Physiotherapy, we believe that every pain has a root cause. Instead of only managing symptoms, we perform detailed clinical evaluations to identify the underlying problem—whether it is related to muscles, joints, nerves, posture, or movement patterns. Based on this assessment, we design personalized treatment plans that address the exact needs of each patient.
     </p>
     
     <p className="leading-relaxed">
       Whether you are recovering from complex neuro-surgery or managing chronic orthopedic pain, our multi-modal approach ensures faster recovery times and long-term functional mobility.
     </p>
     
-    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+    <ul className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4">
       {[
         'UK-Certified Manual Therapy', 
         'Clinical Excellence Since 2011', 
         'Neuro & Ortho Specialization', 
-        'Osteopathic & Chiro Expertise'
+        'Osteopathic & Chiro Expertise',
+        'Dry Needling & Cupping Therapy',
       ].map((item, i) => (
         <li key={i} className="flex items-center gap-2 font-bold text-[#095884]">
           <CheckCircle2 size={18} className="text-[#A1C948]" />
