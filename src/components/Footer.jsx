@@ -103,16 +103,13 @@ const Footer = () => {
   </a>
 </li>
 
- <li className="flex gap-3 items-center whitespace-nowrap">
-  <MapPin size={18} className="text-[#A1C948] shrink-0" /> 
-  <a
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:text-[#A1C948] transition-colors"
-  >
+ <li className="flex gap-2 items-start sm:items-center">
+  <MapPin size={18} className="text-[#A1C948] shrink-0 mt-1 sm:mt-0" /> 
+  <span className="leading-relaxed whitespace-normal sm:whitespace-nowrap">
     UPPAL | BODUPPAL | CHILKANAGAR | NACHARAM | GHATKESAR
-  </a>
+  </span>
 </li>
+
   
 
             </ul>
@@ -120,8 +117,7 @@ const Footer = () => {
          
 
 
-        
-
+      
           {/* Col 2: Services */}
         <div className="col-span-4 lg:col-span-3"> {/* Increased col-span to give more room */}
   <h4 className="font-bold text-white uppercase tracking-wider text-sm mb-6">Services</h4>
