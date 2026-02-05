@@ -58,7 +58,7 @@ const PhysioHero = () => {
                     <p className="font-bold text-xs md:text-sm">Dr. Madhu</p>
                      <p className="text-[10px] md:text-xs opacity-100">MPT, MIAP, MTC, CDNT, CWCT, FOMT</p>
                        <p className="font-bold text-xs md:text-sm">Chief Physiotherapist</p>
-                    <p className="text-[10px] md:text-xs opacity-100">CERTIFIED OSTEOPATH-CHIROPRACTOR LOCM (UK)</p>
+                    <p className="text-[10px] md:text-xs opacity-100">Certified Osteopath & Chiropractor LOCM (UK)</p>
                        <p className="text-[10px] md:text-xs opacity-100">Certified Manual, Dryneedling & Cupping Therapy</p>
                  </div>
                  {/* <MessageCircle className="ml-auto opacity-80" size={18} /> */}

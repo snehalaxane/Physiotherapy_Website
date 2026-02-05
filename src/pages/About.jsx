@@ -44,7 +44,8 @@ const AboutUs = () => {
   {/* Degree & Specialization */}
   <div className="space-y-3">
     <div className="border-l-2 border-[#A1C948] pl-3">
-        <p className="text-[10px] md:text-xs opacity-100">CERTIFIED OSTEOPATH-CHIROPRACTOR LOCM (UK)</p>
+        {/* <p className="text-[10px] md:text-xs opacity-100">Certified Osteopath-Chiropractor LOCM (UK)</p> */}
+         <p className="text-[10px] md:text-xs opacity-100">Certified Osteopath & Chiropractor LOCM (UK)</p>
       <p className="text-[10px] md:text-xs opacity-100">Certified Manual, Dryneedling & Cupping Therapy</p>
       {/* <p className="text-[11px] text-[#A1C948] font-bold">LOCM (UK)</p> */}
     </div>
