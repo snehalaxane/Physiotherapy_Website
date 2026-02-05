@@ -24,12 +24,14 @@ const AboutUs = () => {
               className="rounded-[2.5rem] shadow-2xl transition-transform duration-700 group-hover:scale-[1.02] relative z-10"
             />
             {/* Experience Badge with Glassmorphism */}
-            <div className="absolute -bottom-10 -right-4 md:-right-12 bg-[#095884] text-white p-6 md:p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(9,88,132,0.3)] z-30 max-w-[280px] md:max-w-xs border-b-4 border-[#A1C948] animate-float-hero">
+            <div className="absolute -bottom-20 -right-4 md:-right-12 bg-[#095884] text-white p-6 md:p-8 rounded-[2.5rem] shadow-[0_20px_50px_rgba(9,88,132,0.3)] z-30 max-w-[280px] md:max-w-xs border-b-4 border-[#A1C948] animate-float-hero">
   
   {/* Header Section */}
   <div className="flex justify-between items-start mb-4">
     <div>
       <h3 className="text-2xl md:text-3xl font-bold leading-none">Dr. Madhu</h3>
+        <p className="text-[10px] md:text-xs opacity-100">MPT, MIAP, MTC, CDNT, CWCT, FOMT</p>
+         <p className="font-bold text-xs md:text-sm">Chief Physiotherapist</p>
       <span className="inline-block mt-2 px-2 py-0.5 bg-[#A1C948]/20 text-[#A1C948] text-[12px] font-bold rounded-full uppercase tracking-wider">
         Since 2011
       </span>
@@ -42,10 +44,9 @@ const AboutUs = () => {
   {/* Degree & Specialization */}
   <div className="space-y-3">
     <div className="border-l-2 border-[#A1C948] pl-3">
-      <p className="text-[12px] leading-tight font-semibold text-white/90 uppercase tracking-wide">
-        Certified Osteopath-Chiropractor 
-      </p>
-      <p className="text-[11px] text-[#A1C948] font-bold">LOCM (UK)</p>
+        <p className="text-[10px] md:text-xs opacity-100">CERTIFIED OSTEOPATH-CHIROPRACTOR LOCM (UK)</p>
+      <p className="text-[10px] md:text-xs opacity-100">Certified Manual, Dryneedling & Cupping Therapy</p>
+      {/* <p className="text-[11px] text-[#A1C948] font-bold">LOCM (UK)</p> */}
     </div>
 
     <div className="pt-2 border-t border-white/10">
