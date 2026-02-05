@@ -177,8 +177,8 @@ const ContactPhysioPage = () => {
           {item.label === "Call Support" ? (
             <p className="text-base font-semibold text-slate-700">
               <a href={item.links[0]} className="hover:hover:text-lime-600 hover:underline transition-all">+91 9700354747</a>
-              <span className="mx-1 text-slate-300">/</span>
-              <a href={item.links[1]} className="hover:text-blue-600 hover:underline transition-all">9963573822</a>
+              {/* <span className="mx-1 text-slate-300">/</span>
+              <a href={item.links[1]} className="hover:text-blue-600 hover:underline transition-all">9963573822</a> */}
             </p>
           ) : (
             <a 

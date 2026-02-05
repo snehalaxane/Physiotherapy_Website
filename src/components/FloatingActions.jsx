@@ -33,7 +33,7 @@ const FloatingActions = () => {
           Instagram
         </span>
         <a
-          href="https://instagram.com/yourprofile"
+          href="https://www.instagram.com/sri_sai_priya_physiotherapy/"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-white text-[#E4405F] p-3 md:p-4 rounded-full shadow-lg hover:scale-110 transition-all duration-300 active:scale-95 border border-gray-100"
@@ -50,7 +50,7 @@ const FloatingActions = () => {
           Facebook
         </span>
         <a
-          href="https://facebook.com/yourprofile"
+          href="https://www.facebook.com/nuneti"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-[#1877F2] text-white p-3 md:p-4 rounded-full shadow-lg hover:scale-110 transition-all duration-300 active:scale-95"

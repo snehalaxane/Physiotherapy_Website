@@ -76,7 +76,7 @@ const AboutUs = () => {
 
   <div className="space-y-4 text-gray-700">
     <p className="leading-relaxed">
-      Since 2011, we have pioneered an integrated recovery model that combines <strong>Osteopathy, Chiropractic adjustments, and evidence-based Physiotherapy</strong>. Our patient-centric philosophy doesn't just treat symptoms—we identify and correct the root cause of dysfunction through specialized diagnostic assessment.
+    <strong>Established in 2011,</strong>Sri Sai Priya Physiotherapy has been providing expert care for advanced recovery and rehabilitation. We combine Physiotherapy, Osteopathy, and Chiropractic treatments to help patients heal better and move pain-free.
     </p>
     
     <p className="leading-relaxed">
